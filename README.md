@@ -8,6 +8,10 @@ The following files are ready for download:
   * 500.html
 
 
+**Previews can be found in screenshots directory**
+
+
+
 Note
 ----
 
