@@ -1,10 +1,9 @@
 require 'haml'
 
-
 desc "update assets"
 task :update do
-  Update.haml
   Update.sass
+  Update.haml
 end
 
 
@@ -26,7 +25,6 @@ class Update
 
 
   def self.sass
-    puts "asd"
     system("sass --watch scss:css")
   end
 end
