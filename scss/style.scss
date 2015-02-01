@@ -1,0 +1,49 @@
+@import 'fonts';
+@import 'colors';
+
+
+body {
+	background-color: $dark_blue;
+
+	color: $light_blue;
+
+	@extend %regular_font;
+	font-size: 25px;
+}
+
+.dialog{
+	width: 100%;
+	max-width: 800px;
+	margin: 5em auto;
+	padding: 0 1em;
+
+	@media(max-width: 800px ){ font-size: 15px; }
+
+	> p { margin-top: 2em;}
+}
+
+h1 {
+	@extend %bold_font;	
+	font-weight: bold;
+	font-size: 8em;
+	margin: 0 auto 0;
+	color: $light_blue;
+	text-transform: all-caps
+}
+
+h2 {
+	@extend %script_font;
+	color: white;
+	font-size: 2.5em;
+	margin: -1em auto 0;
+	line-height: 0.8em;
+
+	p { margin: 0;}
+}
+
+h2, p { margin-left: 50px;}
+
+p a {
+	text-decoration: none;
+	color: white;
+}
