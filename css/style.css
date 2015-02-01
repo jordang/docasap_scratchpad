@@ -34,6 +34,9 @@ h1 {
 h2 {
   font-family: 'dancingScript', sans-serif; }
 
+.dialog > p, h2 {
+  -webkit-font-smoothing: antialiased; }
+
 body {
   background-color: #145ea9;
   color: #24b7e0;

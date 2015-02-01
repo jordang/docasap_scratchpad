@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'colors';
+@import 'extends';
 
 
 body {
@@ -19,7 +20,10 @@ body {
 
 	@media(max-width: 800px ){ font-size: 15px; }
 
-	> p { margin-top: 2em;}
+	> p {
+		margin-top: 2em;
+		@extend %antialias;
+	}
 }
 
 h1 {
@@ -37,6 +41,7 @@ h2 {
 	font-size: 2.5em;
 	margin: -1em auto 0;
 	line-height: 0.8em;
+	@extend %antialias;
 
 	p { margin: 0;}
 }
