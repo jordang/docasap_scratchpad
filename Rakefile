@@ -1,16 +1,12 @@
 require 'haml'
 
 desc "update assets"
-task :update do
-  Update.sass
-  Update.haml
-end
+task update: ["update:haml", "update:sass"]
 
 
+namespace :update do
 
-class Update
-
-  def self.haml
+  task :haml do
     Haml::Options.defaults[:format] = :html5
 
     files = Dir.glob("**/*.haml")
@@ -24,7 +20,7 @@ class Update
   end
 
 
-  def self.sass
-    system("sass --watch scss:css")
+  task :sass do
+    puts "'sass --watch scss:css' will watch and change files automatically"
   end
 end
