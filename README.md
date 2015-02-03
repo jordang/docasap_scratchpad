@@ -6,6 +6,7 @@ The following files are ready for download:
   * 404.html
   * 403.html
   * 500.html
+  * maintenance.html
 
 
 **Previews can be found in screenshots directory**
