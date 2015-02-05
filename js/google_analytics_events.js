@@ -1,7 +1,6 @@
 var GATracking = !function(){
 
-	// This will take any element available at documentReady with
-	// the elementTag and send a GA event on first click.
+	// This will take any element with the elementTag and send a GA event on first click.
 	// The category and action names are set as the attribute value, comma-separated
 
 	//Example:
