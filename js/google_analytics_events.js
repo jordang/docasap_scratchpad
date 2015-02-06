@@ -1,11 +1,17 @@
 var GATracking = !function(){
 
-	// This will take any element with the elementTag and send a GA event on first click.
-	// The category and action names are set as the attribute value, comma-separated
+	/*
+	
+	This will take any element with the elementTag and send a GA event on first click.
+	The category and action names are set as the attribute value, comma-separated.
 
-	//Example:
-	// <input docasap-trackable="form-click,confirmation-date-of-birth">
+	Category should be something like: form-touched
+	Action should be something like: zip-code-field
 
+	Example:
+	<input docasap-trackable="form-click,confirmation-date-of-birth">
+	
+	*/
 
 
 	var elementTag = "docasap-trackable";
