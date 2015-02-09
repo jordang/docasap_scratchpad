@@ -11,21 +11,37 @@ var GATracking = !function(){
 	Example:
 	<input docasap-trackable="form-click,confirmation-date-of-birth">
 	
+
+	Will also listen for popup events on document and send to GA.
+	Category and action is specified in the array as ["category", "action"]
+
+	Example:
+	within the function that opens the pop-up, add:
+
+	opensPopUpFunction(){
+		...
+		$(document).trigger("docasap.popupMessage", ["form validation message", "Choose a gender"])
+		...
+	}
+
 	*/
 
 
-	var elementTag = "docasap-trackable";
+	var elementTag = "docasap-trackable",
+		popupEventName = "docasap.popupMessage";
 
 
 
 	function setListeners(){
 
-		$(document).on("click, focusin","[" + elementTag + "]", fireEvent);
+		$(document)
+			.on("click, focusin","[" + elementTag + "]", fireClickEvent)
+			.on(popupEventName, firePopupEvent);
 	}
 
 
 
-	function fireEvent(e){
+	function fireClickEvent(e){
 
 		var valueSet = $(e.target).closest("[" + elementTag + "]").attr(elementTag).split(","),
 			category = valueSet[0],
@@ -34,6 +50,10 @@ var GATracking = !function(){
 		ga('send', 'event', category, action);
 	}
 
+
+	function firePopupEvent(e, category, action){
+		ga('send', 'event', category, action);
+	}
 
 
 	$(setListeners);
