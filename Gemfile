@@ -4,3 +4,4 @@ ruby "2.1.5"
 
 gem 'sass'
 gem "haml"
+gem "compass"

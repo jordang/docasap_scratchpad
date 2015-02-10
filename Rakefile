@@ -26,6 +26,6 @@ namespace :update do
 
 
   task :sass do
-    system("sass --watch scss:css") # This will keep running until killed with ctrl-c
+    system("compass watch") # This will keep running until killed with ctrl-c
   end
 end
