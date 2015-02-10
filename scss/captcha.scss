@@ -1,0 +1,81 @@
+@import 'colors';
+@import 'extends';
+
+@import 'style';
+
+.captcha {
+	margin: 3em auto auto 50px;;
+}
+
+#recaptcha_table {
+	& tr, & td {
+		background: none !important;
+	}
+
+	input {
+		font-size: 16px !important;
+		line-height: 1.5 !important;
+	}
+
+	a {color: lighten($dark_blue, 20%);}
+
+	#recaptcha_reload_btn, #recaptcha_switch_audio_btn, #recaptcha_whatsthis_btn {
+		display: inline-block;
+		background:{
+			repeat: no-repeat !important;
+			size: contain !important;
+		};
+	}
+
+	#recaptcha_reload, #recaptcha_switch_audio, #recaptcha_whatsthis, #recaptcha_switch_img  {
+		visibility: hidden !important;
+	}
+
+	#recaptcha_reload_btn {
+		background-image: inline-image("refresh_icon.svg") !important;
+	}
+
+	#recaptcha_switch_audio_btn {
+		background-image: inline-image("volume_up_icon.svg") !important;
+	}
+
+
+	#recaptcha_whatsthis_btn {
+		background-image: inline-image("question_icon.svg") !important;
+	}
+
+	#recaptcha_switch_img_btn{
+		color: white;
+		display: inline-block;
+		position: relative;
+				
+		&:before{
+			content: "T";
+			font-size: 18px;
+			position: absolute;
+			left: 2px;
+		}
+	}
+}
+
+
+
+#challenge-form > input{
+	-webkit-appearance: none;
+	font-size: 17px !important;
+	line-height: 1.5 !important;
+	text-transform: uppercase;
+	color: white !important;
+	margin: 25px auto auto 110px !important;
+	padding: 0.4em 1em !important;
+	background: none !important;
+	border: 1px solid white !important;
+	border-radius: 5px;
+
+	transition: all 0.25s !important;
+
+	&:hover{
+		color: $dark_blue !important;
+		background-color: white !important;
+	}
+}
