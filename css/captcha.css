@@ -112,6 +112,11 @@ p a {
   color: white;
 }
 
+/* line 57, ../scss/style.scss */
+footer {
+  margin-top: 5em;
+}
+
 /* line 6, ../scss/captcha.scss */
 .captcha {
   margin: 3em auto auto 50px;
