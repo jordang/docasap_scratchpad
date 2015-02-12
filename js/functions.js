@@ -177,7 +177,7 @@
 		// 		changeYear: true,
 		// 		yearRange: "-100:+0",
 		// 		showOn: "button",
-		// 		buttonImage: "css/images/calendar.png",
+		// 		buttonImage: "images/calendar.png",
 		// 		buttonImageOnly: true,
 		// 		beforeShow: function(input, inst) {
 		// 			insertMessage()
