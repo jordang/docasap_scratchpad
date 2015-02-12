@@ -2,15 +2,9 @@ DocASAP Scratchpad
 ==================
 
 The following files are ready for download:
-  * css/style.css
-  * 404.html
-  * 403.html
-  * 500.html
-  * maintenance.html
-  * js/google_analytics_events.js
+  * 
 
-
-**Previews can be found in screenshots directory**
+**Error pages and GA code are in their own branch now**
 
 
 
