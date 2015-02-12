@@ -66,11 +66,26 @@ var GATracking = !function(){
 
 
 
+	function sendPageViewEvent(){
+		// Send Pageview event with clean URL, excluding query string
+		// Should not be used if pageview event is already included with standard GA Script
+		if($('script:contains("ga(\'send\', \'pageview\')")').length === 0){
 
-	// Send Pageview event with clean URL, excluding query string
-	// Should not be used if pageview event is already included with standard GA Script
-	ga('send', 'pageview', newPath);
+			ga('send', 'pageview', newPath);
 
 
-	setListeners()
+		} else {
+			if( console && console.error ) {
+				console.error("Redundant Google Analytics Script\n" +
+					"This page shouldn't have the standard Google Analytics Pageview Event ga('send', 'pageview').\n" +
+					"This script will handle that event instead.")
+			}
+		}
+	}
+
+
+
+
+	sendPageViewEvent();
+	setListeners();
 }();
