@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+
+	<meta id="viewport" name="viewport" content="width = 1100, user-scalable=no" >
+	
+	<script>
+		if (screen.width < 768 ){
+			var mvp = document.getElementById('viewport');
+		
+			mvp.setAttribute('content','width=device-width');
+		}
+	</script>
+	
+	<title>DocASAP Public  Accounts</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+	
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,500,700' rel='stylesheet' type='text/css' />
+
+	<link rel="stylesheet" href="css/fonts.css" />
+
+	<link rel="stylesheet" href="css/magnific-popup.css" />
+
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+
+	<link rel="stylesheet" href="css/select2.css" />
+
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	
+	<link rel="stylesheet" href="css/style.css" />
+
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+	
+	<script type="text/javascript" src="js/jquery.carouFredSel-6.2.1.js"></script>
+	
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="js/select2.full.min.js"></script>
+
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+
+	<script type="text/javascript" src="js/modernizr.custom.39427.js"></script>
+	
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+<div class="wrapper">
