@@ -1,43 +1,11 @@
-//colors
-$color_fun_blue_approx: #145fab;
-$color_robins_egg_blue_approx: #00bff3;
-$color_mountain_mist_approx: #939598;
-$gray: #808080;
-$white: #fff;
-$color_silver_approx: #c1c1c1;
-$color_concrete_approx: #f1f2f2;
-$color_cerulean_approx: #00b3e7;
-$color_dove_gray_approx: #6d6e71;
-$color_cape_cod_approx: #414042;
-$black: #000;
-$color_quill_gray_approx: #d1d3d4;
-$color_torch_red_approx: #f9111a;
-$color_scooter_approx: #25b7e0;
-$color_shady_lady_approx: #a7a9ac;
-$color_ship_gray_approx: #3d3d40;
-$color_seashell_approx: #f0f0f1;
-$color_storm_dust_approx: #656565;
-$color_bon_jour_approx: #e1e1e1;
-$color_picton_blue_approx: #3db5e6;
-$color_celeste_approx: #ccc;
-$color_cararra_approx: #ebebeb;
-$color_endeavour_approx: #0056b8;
-$seashell: #f1f1f1;
-$color_desert_storm_approx: #f7f8f9;
-$color_mine_shaft_approx: #333132;
-$color_alto_approx: #ddd;
-$gold: #ffd700;
-$color_sweet_corn_approx: #ffed85;
+@import "fonts";
+@import "colors";
 
-//fonts
-$font_0: Raleway;
-$font_1: arial;
-$font_2: Bebas;
-$font_3: Arial;
-$font_4: sans-serif;
-$font_5: inherit;
-$font_6: dancingScript;
-$font_7: FontAwesome;
+@import "jquery-ui";
+@import "magnific-popup";
+@import "select2";
+
+
 
 //urls
 $url_0: url("../images/sprite.png");
@@ -79,7 +47,7 @@ $url_21: url("../images/ico-close.png");
 //original selectors
 //button, input, select, textarea
 %extend_2 {
-	font-family: $font_5;
+	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
@@ -91,7 +59,7 @@ $url_21: url("../images/ico-close.png");
 %extend_3 {
 	border: 0;
 	background-color: transparent;
-	color: $color_storm_dust_approx;
+	color: $gray_half;
 	text-align: center;
 }
 
@@ -112,7 +80,7 @@ $url_21: url("../images/ico-close.png");
 %extend_5 {
 	border: 0;
 	font-size: 12px;
-	color: $color_storm_dust_approx;
+	color: $gray_half;
 	background-color: transparent;
 }
 
@@ -176,12 +144,12 @@ html {
 	overflow-y: scroll;
 }
 body {
+	@extend %regular_font;
 	height: 100%;
 	background: $white;
-	font-family: $font_0, $font_3, $font_4;
 	font-size: 14px;
 	line-height: 20px;
-	color: $color_dove_gray_approx;
+	color: $gray_half;
 }
 .alignleft {
 	float: left;
@@ -194,7 +162,7 @@ body {
 	visibility: hidden;
 }
 .header {
-	background-color: $color_robins_egg_blue_approx;
+	background-color: $light_color;
 	height: 108px;
 	.shell {
 		*zoom: 1;
@@ -281,29 +249,29 @@ body {
 h1 {
 	font-size: 48px;
 	line-height: 52px;
-	color: $color_fun_blue_approx;
+	color: $dark_color;
 	font-weight: normal;
 }
 h2 {
 	font-size: 30px;
 	line-height: 34px;
-	color: $color_robins_egg_blue_approx;
+	color: $light_color;
 	font-weight: normal;
 }
 h3 {
+	@extend %strong_font;
 	font-size: 36px;
 	line-height: 40px;
-	font-family: $font_2, $font_1;
 	font-weight: normal;
 }
 h4 {
 	font-size: 14px;
 	line-height: 18px;
-	color: $color_cape_cod_approx;
+	color: $gray_dark;
 }
 a {
 	text-decoration: none;
-	color: $color_fun_blue_approx;
+	color: $dark_color;
 	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: opacity 0.3s, color 0.3s, border-color 0.3s, background-color 0.3s;
 	&:hover {
@@ -328,13 +296,13 @@ small {
 	font-weight: bold;
 	color: $white;
 	text-transform: uppercase;
-	background-color: $color_cerulean_approx;
+	background-color: $light_color;
 	text-align: center;
 	padding: 19px 0 18px;
 	position: relative;
 	&:hover {
 		background-color: transparent;
-		color: $color_cerulean_approx;
+		color: $light_color;
 	}
 	.ico-plus {
 		margin-right: 4px;
@@ -377,7 +345,7 @@ small {
 	margin-top: 5px;
 }
 .btn-book {
-	background-color: $color_robins_egg_blue_approx;
+	background-color: $light_color;
 	padding: 25px 0 23px 92px;
 	display: inline-block;
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
@@ -391,7 +359,7 @@ small {
 	position: relative;
 	&:hover {
 		background-color: $white;
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 		.ico-book {
 			background-position: -212px -216px;
 			width: 35px;
@@ -419,13 +387,13 @@ small {
 	}
 }
 .btn-book-teritary {
-	border-color: $color_robins_egg_blue_approx;
-	color: $color_robins_egg_blue_approx;
+	border-color: $light_color;
+	color: $light_color;
 	font-size: 19px;
 	letter-spacing: 1px;
 	&:hover {
-		background-color: $color_robins_egg_blue_approx;
-		border-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
+		border-color: $light_color;
 		color: $white;
 		.ico-book {
 			background-position: -234px 0;
@@ -441,22 +409,22 @@ small {
 	font-size: 11px;
 	font-weight: bold;
 	letter-spacing: 0.5px;
-	background-color: $color_fun_blue_approx;
+	background-color: $dark_color;
 	min-width: 0;
 	padding: 7px 26px;
 	min-width: 212px;
 	&:hover {
 		background-color: transparent;
-		color: $color_fun_blue_approx;
+		color: $dark_color;
 	}
 	i {
 		margin: 0 5px -4px 0;
 	}
 }
 .btn-light {
-	background-color: $color_quill_gray_approx;
+	background-color: $gray_lighter;
 	&:hover {
-		color: $color_quill_gray_approx;
+		color: $gray_lighter;
 	}
 }
 .btn-settings {
@@ -470,12 +438,12 @@ small {
 }
 .btn-transparent {
 	background-color: transparent;
-	border: 2px solid $color_robins_egg_blue_approx;
-	color: $color_robins_egg_blue_approx;
+	border: 2px solid $light_color;
+	color: $light_color;
 	&:hover {
-		border-color: $color_robins_egg_blue_approx;
+		border-color: $light_color;
 		color: $white;
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 	}
 }
 .btn-small {
@@ -507,12 +475,12 @@ small {
 	margin: 0 auto;
 }
 .btn-red {
-	border-color: $color_torch_red_approx!important;
-	color: $color_torch_red_approx;
+	border-color: $red!important;
+	color: $red;
 	&:hover {
-		border-color: $color_torch_red_approx!important;
+		border-color: $red!important;
 		color: $white;
-		background-color: $color_torch_red_approx;
+		background-color: $red;
 	}
 }
 .nav-utilities {
@@ -541,22 +509,22 @@ small {
 	a {
 		font-size: 24px;
 		line-height: 30px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		&:hover {
-			color: $color_scooter_approx;
+			color: $light_color;
 		}
 	}
 	.current a {
-		color: $color_scooter_approx;
+		color: $light_color;
 	}
 }
 .nav-secondary {
 	h3 {
+		@extend %regular_font;
 		font-weight: bold;
 		font-size: 24px;
 		line-height: 30px;
-		color: $color_cape_cod_approx;
-		font-family: $font_0, $font_1;
+		color: $gray_dark;
 		padding-bottom: 10px;
 	}
 	li {
@@ -565,20 +533,20 @@ small {
 	a {
 		font-size: 21px;
 		line-height: 25px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		&:hover {
-			color: $color_scooter_approx;
+			color: $light_color;
 		}
 	}
 	.current a {
-		color: $color_scooter_approx;
+		color: $light_color;
 	}
 }
 .nav-teritary {
 	a {
 		font-size: 18px;
 		line-height: 22px;
-		color: $color_shady_lady_approx;
+		color: $gray_light;
 		&:hover {
 			color: $black;
 		}
@@ -608,7 +576,7 @@ button {
 input {
 	@extend %extend_2;
 	&:-moz-placeholder {
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 	}
 }
 select {
@@ -629,17 +597,17 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-::-webkit-input-placeholder { color: $color_cape_cod_approx; }
-::-moz-placeholder { color: $color_cape_cod_approx; }
+::-webkit-input-placeholder { color: $gray_dark; }
+::-moz-placeholder { color: $gray_dark; }
 
 :-ms-input-placeholder {
-	color: $color_cape_cod_approx;
+	color: $gray_dark;
 }
 .field {
-	border: 3px solid $color_concrete_approx;
+	border: 3px solid $white_gray;
 	font-size: 18px;
 	line-height: 20px;
-	color: $color_cape_cod_approx;
+	color: $gray_dark;
 	padding: 2px 8px 9px;
 }
 .field-secondary {
@@ -698,11 +666,11 @@ input[type="submit"] {
 	}
 }
 .form-btn {
-	border: 3px solid $color_robins_egg_blue_approx;
+	border: 3px solid $light_color;
 	font-weight: bold;
 	font-size: 18px;
 	text-transform: uppercase;
-	color: $color_robins_egg_blue_approx;
+	color: $light_color;
 	width: 263px;
 	height: 57px;
 	background-color: transparent;
@@ -710,9 +678,9 @@ input[type="submit"] {
 	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: opacity 0.3s, color 0.3s, border-color 0.3s, background-color 0.3s;
 	&:hover {
-		border-color: $color_robins_egg_blue_approx;
+		border-color: $light_color;
 		color: $white;
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 	}
 }
 .form-group {
@@ -736,7 +704,7 @@ input[type="submit"] {
 	label {
 		font-size: 18px;
 		line-height: 20px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		position: relative;
 		padding: 3px 0 0 39px;
 		display: block;
@@ -756,7 +724,7 @@ input[type="submit"] {
 }
 .ui-datepicker {
 	width: 200px;
-	background-color: $color_seashell_approx;
+	background-color: $white_gray;
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 0;
 	border: 0;
@@ -769,12 +737,12 @@ input[type="submit"] {
 	}
 	.ui-datepicker-title {
 		font-size: 12px;
-		color: $color_storm_dust_approx;
+		color: $gray_half;
 		text-transform: uppercase;
 	}
 	th {
 		font-weight: normal;
-		color: $color_storm_dust_approx;
+		color: $gray_half;
 	}
 	.ui-datepicker-prev {
 		@extend %extend_4;
@@ -802,11 +770,11 @@ input[type="submit"] {
 		@extend %extend_3;
 	}
 	.ui-state-highlight {
-		background-color: $color_cerulean_approx;
-		color: $color_storm_dust_approx;
+		background-color: $light_color;
+		color: $gray_half;
 	}
 	.ui-state-active {
-		border: 1px solid $color_storm_dust_approx;
+		border: 1px solid $gray_half;
 	}
 }
 .ui-widget-header {
@@ -814,27 +782,27 @@ input[type="submit"] {
 		@extend %extend_3;
 	}
 	.ui-state-highlight {
-		background-color: $color_cerulean_approx;
-		color: $color_storm_dust_approx;
+		background-color: $light_color;
+		color: $gray_half;
 	}
 	.ui-state-active {
-		border: 1px solid $color_storm_dust_approx;
+		border: 1px solid $gray_half;
 	}
 	.ui-datepicker-prev {
 		background: $url_7 no-repeat 0 0!important;
 	}
 }
 .ui-state-highlight {
-	background-color: $color_cerulean_approx;
-	color: $color_storm_dust_approx;
+	background-color: $light_color;
+	color: $gray_half;
 }
 .ui-state-active {
-	border: 1px solid $color_storm_dust_approx;
+	border: 1px solid $gray_half;
 }
 .datepicker-curr {
 	text-align: center;
 	font-size: 50px;
-	color: $color_storm_dust_approx;
+	color: $gray_half;
 	line-height: 60px;
 }
 [class^="ico-"] {
@@ -1044,46 +1012,46 @@ td {
 	padding: 0;
 }
 .table {
-	border-bottom: 1px solid $color_bon_jour_approx;
+	border-bottom: 1px solid $gray_lightest;
 	th {
 		width: 14.28%;
 		text-align: center;
-		border-right: 1px solid $color_bon_jour_approx;
-		border-bottom: 1px solid $color_bon_jour_approx;
+		border-right: 1px solid $gray_lightest;
+		border-bottom: 1px solid $gray_lightest;
 		height: 77px;
-		border-top: 1px solid $color_bon_jour_approx;
+		border-top: 1px solid $gray_lightest;
 		font-size: 12px;
 		line-height: 16px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		font-weight: normal;
-		border-left: 1px solid $color_bon_jour_approx;
+		border-left: 1px solid $gray_lightest;
 		strong {
 			display: block;
 			font-size: 14px;
 			line-height: 18px;
 			font-weight: bold;
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 		}
 	}
 	td {
 		text-align: center;
 		height: 33px;
-		border-right: 1px solid $color_bon_jour_approx;
+		border-right: 1px solid $gray_lightest;
 		&:first-child {
-			border-left: 1px solid $color_bon_jour_approx;
+			border-left: 1px solid $gray_lightest;
 		}
 	}
 	p {
-		border: 1px solid $color_mountain_mist_approx;
+		border: 1px solid $gray_light;
 		height: 33px;
 		padding-top: 7px;
 		font-weight: bold;
 		font-size: 14px;
 		line-height: 16px;
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 	}
 	.current {
-		background-color: $color_concrete_approx;
+		background-color: $white_gray;
 	}
 }
 .slider-logos {
@@ -1118,11 +1086,11 @@ td {
 	a {
 		font-size: 14px;
 		line-height: 18px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		text-transform: uppercase;
 		font-weight: bold;
 		&:hover {
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	i {
@@ -1167,7 +1135,7 @@ td {
 	p {
 		font-size: 12px;
 		line-height: 18px;
-		color: $color_dove_gray_approx;
+		color: $gray_half;
 	}
 	i {
 		position: absolute;
@@ -1180,7 +1148,7 @@ td {
 	position: relative;
 	padding-bottom: 33px;
 	&:after {
-		border-left: 1px solid $color_mountain_mist_approx;
+		border-left: 1px solid $gray_light;
 		left: 50%;
 		top: 0;
 		height: 100%;
@@ -1193,7 +1161,7 @@ td {
 			position: relative;
 			padding-left: 23px;
 			font-size: 12px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 		}
 		.ico-arrow {
 			margin-top: -5px;
@@ -1202,16 +1170,16 @@ td {
 	h2 {
 		font-size: 24px;
 		line-height: 28px;
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 		font-weight: bold;
 	}
 	p {
 		font-size: 18px;
-		color: $color_mountain_mist_approx;
+		color: $gray_light;
 		line-height: 24px;
 	}
 	a {
-		color: $color_mountain_mist_approx;
+		color: $gray_light;
 		&:hover {
 			color: $black;
 		}
@@ -1244,7 +1212,7 @@ td {
 	h2 {
 		font-size: 24px;
 		line-height: 28px;
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 		font-weight: bold;
 		float: left;
 		width: 220px;
@@ -1269,7 +1237,7 @@ td {
 .list-icons {
 	font-size: 18px;
 	line-height: 22px;
-	color: $color_dove_gray_approx;
+	color: $gray_half;
 	li {
 		position: relative;
 		padding: 32px 0 32px 65px;
@@ -1319,11 +1287,11 @@ td {
 	}
 	h3 {
 		font-size: 24px;
-		color: $color_picton_blue_approx;
+		color: $light_color;
 		line-height: 24px;
 	}
 	p {
-		color: $color_mountain_mist_approx;
+		color: $gray_light;
 	}
 }
 .form-user {
@@ -1331,10 +1299,10 @@ td {
 		padding-bottom: 34px;
 	}
 	h2 {
-		font-family: $font_2, $font_1;
+		@extend %strong_font;
 		font-size: 36px;
 		line-height: 40px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		letter-spacing: 2px;
 		float: left;
 		+ .btn-edit {
@@ -1350,10 +1318,10 @@ td {
 		}
 	}
 	label {
+		@extend %regular_font;
 		font-size: 30px;
 		line-height: 34px;
-		color: $color_robins_egg_blue_approx;
-		font-family: $font_0, $font_1;
+		color: $light_color;
 		display: block;
 		padding-bottom: 2px;
 	}
@@ -1416,7 +1384,7 @@ td {
 	label {
 		font-size: 24px;
 		line-height: 28px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		display: block;
 		padding-top: 3px;
 	}
@@ -1447,7 +1415,7 @@ td {
 		width: 280px;
 		font-size: 30px;
 		line-height: 34px;
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 		padding-top: 2px;
 	}
 	.form-row {
@@ -1465,16 +1433,16 @@ td {
 		.btn {
 			float: left;
 			height: 57px;
-			background-color: $color_cerulean_approx;
+			background-color: $light_color;
 			color: $white;
 			border: 0;
 			position: relative;
-			border: 3px solid $color_cerulean_approx;
+			border: 3px solid $light_color;
 			padding-top: 16px;
 			&:hover {
 				background-color: transparent;
-				color: $color_cerulean_approx;
-				border-color: $color_cerulean_approx;
+				color: $light_color;
+				border-color: $light_color;
 			}
 			+ .btn {
 				margin-left: 17px;
@@ -1488,23 +1456,23 @@ td {
 }
 .form-login {
 	h3 {
+		@extend %regular_font;
 		font-size: 24px;
 		font-weight: bold;
-		font-family: $font_0, $font_1;
-		color: $color_scooter_approx;
+		color: $light_color;
 		padding-bottom: 10px;
 	}
 	a {
 		font-size: 12px;
 		line-height: 14px;
-		color: $color_shady_lady_approx;
+		color: $gray_light;
 		&:hover {
 			color: $black;
 		}
 	}
 	.field {
 		width: 100%;
-		border: 2px solid $color_celeste_approx;
+		border: 2px solid $gray_lighter;
 		text-align: center;
 		padding: 13px 5px 12px;
 		font-size: 18px;
@@ -1515,16 +1483,16 @@ td {
 	}
 	.form-btn {
 		width: 100%;
-		background-color: $color_scooter_approx;
+		background-color: $light_color;
 		color: $white;
 		border: 0;
 		margin-bottom: 10px;
-		border: 3px solid $color_cerulean_approx;
+		border: 3px solid $light_color;
 		padding-top: 0;
 		&:hover {
 			background-color: transparent;
-			color: $color_cerulean_approx;
-			border-color: $color_cerulean_approx;
+			color: $light_color;
+			border-color: $light_color;
 		}
 	}
 }
@@ -1532,16 +1500,16 @@ td {
 	h3 {
 		font-size: 36px;
 		line-height: 40px;
-		color: $color_fun_blue_approx;
+		color: $dark_color;
 	}
 	.field {
 		width: 100%;
-		border-color: $color_concrete_approx;
+		border-color: $white_gray;
 		padding-top: 8px;
 		padding-left: 22px;
 	}
 	.form-head {
-		border-bottom: 1px solid $color_cape_cod_approx;
+		border-bottom: 1px solid $gray_dark;
 		margin-bottom: 47px;
 		padding-bottom: 19px;
 	}
@@ -1556,46 +1524,46 @@ td {
 	}
 	.form-btn {
 		border: 0;
-		background-color: $color_cerulean_approx;
+		background-color: $light_color;
 		color: $white;
 		min-width: 355px;
 		&:hover {
 			background-color: transparent;
-			color: $color_cerulean_approx;
-			border: 3px solid $color_cerulean_approx;
+			color: $light_color;
+			border: 3px solid $light_color;
 		}
 	}
 }
 .form-question {
 	.form-head {
-		border-bottom: 1px solid $color_cape_cod_approx;
+		border-bottom: 1px solid $gray_dark;
 		padding-bottom: 19px;
 		margin-bottom: 32px;
 		h3 {
 			font-size: 36px;
 			line-height: 40px;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	.form-body {
 		h3 {
-			font-family: $font_6, $font_1;
+			@extend %script_font;
 			font-size: 30px;
 			line-height: 34px;
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 			padding-bottom: 4px;
 		}
 		p {
 			font-size: 18px;
 			line-height: 24px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			padding-bottom: 24px;
 		}
 		label {
 			display: block;
 			font-size: 18px;
 			line-height: 24px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			font-weight: bold;
 			padding-bottom: 13px;
 		}
@@ -1616,13 +1584,13 @@ td {
 	}
 	.form-btn {
 		border: 0;
-		background-color: $color_cerulean_approx;
+		background-color: $light_color;
 		color: $white;
 		min-width: 355px;
 		&:hover {
 			background-color: transparent;
-			color: $color_cerulean_approx;
-			border: 3px solid $color_cerulean_approx;
+			color: $light_color;
+			border: 3px solid $light_color;
 		}
 	}
 }
@@ -1632,11 +1600,11 @@ td {
 		display: block;
 		font-size: 18px;
 		line-height: 22px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		padding-bottom: 7px;
 	}
 	.textarea {
-		border-color: $color_celeste_approx;
+		border-color: $gray_lighter;
 		width: 295px;
 		height: 80px;
 	}
@@ -1653,12 +1621,12 @@ td {
 		.form-btn {
 			width: 335px;
 			border: 0;
-			background-color: $color_cerulean_approx;
+			background-color: $light_color;
 			color: $white;
 			&:hover {
 				background-color: transparent;
-				color: $color_cerulean_approx;
-				border: 3px solid $color_cerulean_approx;
+				color: $light_color;
+				border: 3px solid $light_color;
 			}
 		}
 	}
@@ -1669,7 +1637,7 @@ td {
 		display: inline-block;
 		font-size: 29px;
 		line-height: 32px;
-		color: $color_mountain_mist_approx;
+		color: $gray_light;
 		font-weight: 500;
 	}
 	.form-head {
@@ -1686,22 +1654,22 @@ td {
 	}
 	.field {
 		border: 0;
-		border-bottom: 1px solid $color_shady_lady_approx;
+		border-bottom: 1px solid $gray_light;
 		font-size: 29px;
 		line-height: 32px;
-		color: $color_robins_egg_blue_approx!important;
+		color: $light_color!important;
 		font-weight: 500;
 		padding: 0 0 9px 0;
 		text-align: left;
 	}
 	.form-btn {
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 		border: 0;
 		color: $white;
 		&:hover {
 			background-color: transparent;
-			color: $color_robins_egg_blue_approx;
-			border: 3px solid $color_robins_egg_blue_approx;
+			color: $light_color;
+			border: 3px solid $light_color;
 		}
 	}
 }
@@ -1724,13 +1692,13 @@ td {
 	label {
 		font-size: 18px;
 		line-height: 22px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		display: block;
 		padding-bottom: 15px;
 	}
 	.textarea {
 		width: 100%;
-		border: 3px solid $color_cararra_approx;
+		border: 3px solid $gray_lightest;
 		height: 80px;
 	}
 	.form-body {
@@ -1738,7 +1706,7 @@ td {
 	}
 	.form-btn {
 		border: 0;
-		background-color: $color_cerulean_approx;
+		background-color: $light_color;
 		width: 235px;
 		height: 57px;
 		color: $white;
@@ -1746,15 +1714,15 @@ td {
 		margin-bottom: 14px;
 		&:hover {
 			background-color: transparent;
-			color: $color_cerulean_approx;
-			border: 3px solid $color_cerulean_approx;
+			color: $light_color;
+			border: 3px solid $light_color;
 		}
 	}
 	.form-actions {
 		padding-bottom: 65px;
 		a {
 			font-weight: bold;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 			text-transform: uppercase;
 		}
 	}
@@ -1790,14 +1758,14 @@ td {
 		width: 78px;
 		height: 31px;
 		border: 0;
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 		color: $white;
 		margin-bottom: 10px;
 		font-size: 14px;
 		&:hover {
 			background-color: transparent;
-			color: $color_cerulean_approx;
-			border: 3px solid $color_cerulean_approx;
+			color: $light_color;
+			border: 3px solid $light_color;
 		}
 	}
 }
@@ -1807,7 +1775,7 @@ td {
 	h2 {
 		font-size: 18px;
 		line-height: 22px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		padding-bottom: 30px;
 	}
 	.slides {
@@ -1861,7 +1829,7 @@ td {
 	.current {
 		&:after {
 			content: '';
-			border-top: 22px solid $color_robins_egg_blue_approx;
+			border-top: 22px solid $light_color;
 			border-left: 22px solid transparent;
 			border-right: 22px solid transparent;
 			position: absolute;
@@ -1873,20 +1841,20 @@ td {
 			background-position: -371px 0;
 		}
 		a span {
-			border-color: $color_endeavour_approx;
-			color: $color_endeavour_approx;
+			border-color: $dark_color;
+			color: $dark_color;
 		}
 	}
 	a {
+		@extend %strong_font;
 		display: block;
 		font-size: 24px;
 		line-height: 28px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		text-transform: uppercase;
-		font-family: $font_2, $font_1;
 		letter-spacing: 1px;
 		&:hover {
-			color: $color_endeavour_approx;
+			color: $dark_color;
 		}
 		span {
 			display: block;
@@ -1936,10 +1904,10 @@ td {
 			margin-bottom: 22px;
 		}
 		p {
+			@extend %strong_font;
 			font-size: 24px;
 			line-height: 26px;
-			color: $color_picton_blue_approx;
-			font-family: $font_2, $font_1;
+			color: $light_color;
 			padding-bottom: 22px;
 		}
 	}
@@ -1952,21 +1920,21 @@ td {
 	text-align: center;
 	padding-bottom: 160px;
 	.btn {
-		background-color: $color_fun_blue_approx;
+		background-color: $dark_color;
 		&:hover {
 			background-color: transparent;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	.btn:hover:after {
-		border-color: $color_fun_blue_approx;
+		border-color: $dark_color;
 	}
 }
 .header-home {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: $color_fun_blue_approx;
+	background-color: $dark_color;
 	width: 100%;
 	z-index: 9;
 	.logo {
@@ -1994,16 +1962,16 @@ td {
 	float: left;
 	position: relative;
 	h3 {
+		@extend %strong_font;
 		font-size: 18px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		font-weight: normal;
 		text-transform: uppercase;
-		font-family: $font_2, $font_1;
 		letter-spacing: 1px;
 		line-height: 20px;
 		padding-bottom: 9px;
 		a {
-			color: $color_scooter_approx;
+			color: $light_color;
 		}
 	}
 	&:hover {
@@ -2011,7 +1979,7 @@ td {
 			display: block;
 		}
 		h3 a {
-			color: $color_scooter_approx;
+			color: $light_color;
 		}
 	}
 	ul {
@@ -2033,7 +2001,7 @@ td {
 			line-height: 13px;
 			white-space: nowrap;
 			&:hover {
-				color: $color_scooter_approx;
+				color: $light_color;
 			}
 		}
 	}
@@ -2062,7 +2030,7 @@ td {
 			top: 0;
 			bottom: 0;
 			left: 285px;
-			border-right: 1px solid $color_celeste_approx;
+			border-right: 1px solid $gray_lighter;
 			content: '';
 		}
 	}
@@ -2077,7 +2045,7 @@ td {
 	address {
 		font-size: 18px;
 		line-height: 30px;
-		color: $color_shady_lady_approx;
+		color: $gray_light;
 		font-style: normal;
 		position: absolute;
 		bottom: 0;
@@ -2129,11 +2097,11 @@ td {
 		overflow: hidden;
 		.btn {
 			background-color: transparent;
-			border: 2px solid $color_robins_egg_blue_approx;
+			border: 2px solid $light_color;
 			min-width: 0;
 			display: block;
 			font-size: 14px;
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 			padding: 8px 0 9px;
 			&:hover {
 				border-color: $black;
@@ -2162,11 +2130,11 @@ td {
 		}
 		p {
 			line-height: 20px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 		}
 		a {
 			font-weight: bold;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 			&:hover {
 				color: $black;
 			}
@@ -2187,12 +2155,12 @@ td {
 		p {
 			&:last-child {
 				font-size: 12px;
-				color: $color_cape_cod_approx;
+				color: $gray_dark;
 				text-transform: uppercase;
 			}
 			a {
 				font-weight: bold;
-				color: $color_fun_blue_approx;
+				color: $dark_color;
 				&:hover {
 					color: $black;
 				}
@@ -2206,7 +2174,7 @@ td {
 	}
 	.article-caption {
 		font-size: 12px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		float: left;
 		width: 100%;
 		padding-top: 19px;
@@ -2215,7 +2183,7 @@ td {
 		text-align: center;
 		padding-bottom: 50px;
 		p {
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			padding: 5px 55px 0 0;
 		}
 	}
@@ -2262,7 +2230,7 @@ td {
 		p {
 			font-size: 12px;
 			line-height: 20px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			position: relative;
 			padding-right: 25px;
 		}
@@ -2280,7 +2248,7 @@ td {
 	.article-options {
 		width: 585px;
 		background-color: $white;
-		border: 2px solid $color_mountain_mist_approx;
+		border: 2px solid $gray_light;
 		position: absolute;
 		top: -9999px;
 		right: 9999px;
@@ -2296,14 +2264,14 @@ td {
 		strong {
 			font-size: 18px;
 			line-height: 24px;
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 			width: 255px;
 			float: left;
 		}
 		a {
 			font-size: 18px;
 			line-height: 24px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			font-weight: normal;
 			text-transform: none;
 			float: left;
@@ -2343,7 +2311,7 @@ td {
 .article-cancel {
 	font-size: 18px;
 	line-height: 24px;
-	color: $color_cape_cod_approx;
+	color: $gray_dark;
 	.article-actions {
 		overflow: hidden;
 		padding: 32px 0 108px;
@@ -2351,10 +2319,10 @@ td {
 			float: left;
 			min-width: 180px;
 			padding: 0;
-			border: 3px solid $color_cerulean_approx;
+			border: 3px solid $light_color;
 			padding: 8px 0 9px;
 			&:hover {
-				border-color: $color_cerulean_approx;
+				border-color: $light_color;
 			}
 			+ .btn {
 				margin-left: 23px;
@@ -2367,19 +2335,19 @@ td {
 }
 .article-jobs {
 	h3 {
-		color: $color_robins_egg_blue_approx;
+		color: $light_color;
 	}
 	p {
 		padding-bottom: 24px;
 		a {
 			font-weight: bold;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	.btn {
 		color: $white;
 		&:hover {
-			color: $color_cerulean_approx;
+			color: $light_color;
 		}
 	}
 	+ .article-jobs {
@@ -2395,9 +2363,9 @@ td {
 		line-height: 14px;
 	}
 	a {
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		&:hover {
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	figure {
@@ -2414,8 +2382,8 @@ td {
 	}
 }
 .article-bio {
-	background-color: $seashell;
-	color: $color_cape_cod_approx;
+	background-color: $white_gray;
+	color: $gray_dark;
 	padding: 55px 73px 53px 78px;
 	h4 {
 		padding-bottom: 3px;
@@ -2433,9 +2401,9 @@ td {
 	}
 	a {
 		font-weight: bold;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		&:hover {
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 }
@@ -2443,7 +2411,7 @@ td {
 	p {
 		font-size: 18px;
 		line-height: 24px;
-		color: $color_dove_gray_approx;
+		color: $gray_half;
 	}
 	.article-entry {
 		float: left;
@@ -2478,7 +2446,7 @@ td {
 			float: left;
 			font-size: 22px;
 			line-height: 26px;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			letter-spacing: 2px;
 			padding: 17px 34px 0 0;
 		}
@@ -2502,7 +2470,7 @@ td {
 	}
 	a {
 		font-size: 14px;
-		color: $color_mountain_mist_approx;
+		color: $gray_light;
 		&:hover {
 			color: $black;
 		}
@@ -2525,19 +2493,19 @@ td {
 		padding-bottom: 49px;
 	}
 	.section-actions {
-		border-top: 1px solid $color_ship_gray_approx;
+		border-top: 1px solid $gray_dark;
 		padding-top: 58px;
 	}
 }
 .section-gray {
-	background-color: $color_desert_storm_approx;
+	background-color: $white_gray;
 }
 .section-security {
-	background-color: $color_fun_blue_approx;
+	background-color: $dark_color;
 	padding: 102px 0 192px;
 }
 .section-appointment {
-	background-color: $color_concrete_approx;
+	background-color: $white_gray;
 	margin: 0 10px 100px 67px;
 	padding: 75px 105px 60px;
 	position: relative;
@@ -2554,7 +2522,7 @@ td {
 		padding-bottom: 55px;
 		h3 {
 			float: left;
-			color: $color_cape_cod_approx;
+			color: $gray_dark;
 			letter-spacing: 3px;
 		}
 		p {
@@ -2562,7 +2530,7 @@ td {
 			font-size: 24px;
 			line-height: 30px;
 			font-weight: bold;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 }
@@ -2630,10 +2598,10 @@ td {
 }
 .section-partners-secondary {
 	h1 {
-		font-family: $font_6, $font_1;
+		@extend %script_font;
 		font-size: 30px;
 		line-height: 34px;
-		border-bottom: 2px solid $color_celeste_approx;
+		border-bottom: 2px solid $gray_lighter;
 		padding-bottom: 19px;
 	}
 	.list-logos li {
@@ -2641,29 +2609,29 @@ td {
 	}
 }
 .section-landing {
-	background-color: $color_fun_blue_approx;
+	background-color: $dark_color;
 	padding-top: 108px;
 	height: 100%;
 	position: relative;
 	min-height: 680px;
 	h1 {
+		@extend %strong_font;
 		font-size: 161px;
 		line-height: 170px;
-		font-family: $font_2, $font_1;
 		color: $white;
 		letter-spacing: 40px;
 		padding-bottom: 40px;
 	}
 	h2 {
+		@extend %script_font;
 		font-size: 60px;
 		line-height: 64px;
 		color: $white;
-		font-family: $font_6, $font_1;
 		border-bottom: 1px solid $white;
 		margin: 0 33px 30px 0;
 		span {
 			display: inline-block;
-			background-color: $color_fun_blue_approx;
+			background-color: $dark_color;
 			position: relative;
 			bottom: -30px;
 			padding-left: 30px;
@@ -2687,7 +2655,7 @@ td {
 	}
 	.btn-book-secondary:hover {
 		background-color: $white;
-		color: $color_fun_blue_approx;
+		color: $dark_color;
 		.ico-book-primary {
 			background-position: -283px -216px;
 			width: 34px;
@@ -2720,12 +2688,12 @@ td {
 		}
 		p {
 			font-size: 30px;
-			color: $color_dove_gray_approx;
+			color: $gray_half;
 			line-height: 34px;
 			em {
+				@extend %script_font;
 				font-style: normal;
-				font-family: $font_6, $font_1;
-				color: $color_robins_egg_blue_approx;
+				color: $light_color;
 				font-size: 38px;
 			}
 		}
@@ -2738,7 +2706,7 @@ td {
 	}
 	.section-title {
 		text-align: center;
-		border: 1px solid $color_concrete_approx;
+		border: 1px solid $white_gray;
 		border-left: 0;
 		border-right: 0;
 		margin: 73px 0 70px;
@@ -2746,7 +2714,7 @@ td {
 			font-size: 60px;
 			line-height: 80px;
 			letter-spacing: 3px;
-			color: $color_picton_blue_approx;
+			color: $light_color;
 		}
 	}
 	.section-actions {
@@ -2754,14 +2722,14 @@ td {
 		padding-bottom: 67px;
 		.btn {
 			margin: 0 20px;
-			background-color: $color_fun_blue_approx;
+			background-color: $dark_color;
 			&:hover {
 				background-color: transparent;
-				color: $color_fun_blue_approx;
+				color: $dark_color;
 			}
 		}
 		.btn:hover:after {
-			border-color: $color_fun_blue_approx;
+			border-color: $dark_color;
 		}
 	}
 	.btn-scroll {
@@ -2770,7 +2738,7 @@ td {
 }
 .section-tabs {
 	.tabs-head {
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 		text-align: center;
 		padding: 115px 0 0 0;
 		h1 {
@@ -2785,7 +2753,7 @@ td {
 		top: 0;
 		left: 0;
 		width: 100%;
-		background-color: $color_robins_egg_blue_approx;
+		background-color: $light_color;
 		padding-top: 26px;
 		li {
 			padding-bottom: 0;
@@ -2794,9 +2762,9 @@ td {
 			display: none;
 		}
 		a {
+			@extend %regular_font;
 			font-size: 14px;
 			text-transform: none;
-			font-family: $font_0, $font_1;
 			text-transform: capitalize;
 		}
 		i {
@@ -2829,7 +2797,7 @@ td {
 	}
 }
 .section-why {
-	background-color: $color_endeavour_approx;
+	background-color: $dark_color;
 	color: $white;
 	text-align: center;
 	padding: 102px 0 125px;
@@ -2866,15 +2834,15 @@ td {
 	}
 }
 .section-why-secondary {
-	background-color: $color_picton_blue_approx;
+	background-color: $light_color;
 	padding-bottom: 125px;
 	.btn {
-		background-color: $color_fun_blue_approx;
+		background-color: $dark_color;
 		margin: 0 20px;
 		&:hover {
 			background-color: $black;
 			background-color: transparent;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	.list-more li {
@@ -2882,7 +2850,7 @@ td {
 		margin: 0;
 	}
 	.btn:hover:after {
-		border-color: $color_fun_blue_approx;
+		border-color: $dark_color;
 	}
 }
 .section-case {
@@ -2917,7 +2885,7 @@ td {
 	}
 	.section-title {
 		text-align: center;
-		border: 2px solid $color_concrete_approx;
+		border: 2px solid $white_gray;
 		border-left: 0;
 		border-right: 0;
 		margin: 0 0 100px 0;
@@ -2925,24 +2893,24 @@ td {
 			font-size: 38px;
 			line-height: 42px;
 			letter-spacing: 1px;
-			color: $color_picton_blue_approx;
+			color: $light_color;
 			padding: 27px 0;
 		}
 	}
 	.btn {
-		background-color: $color_fun_blue_approx;
+		background-color: $dark_color;
 		margin: 0 20px;
 		&:hover {
 			background-color: transparent;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 	}
 	.btn:hover:after {
-		border-color: $color_fun_blue_approx;
+		border-color: $dark_color;
 	}
 }
 .section-states {
-	background-color: $color_endeavour_approx;
+	background-color: $dark_color;
 	padding: 155px 0;
 	min-height: 100%;
 	.section-head {
@@ -2961,14 +2929,14 @@ td {
 		width: 450px;
 		padding: 50px 0 0;
 		h2 {
+			@extend %script_font;
 			font-size: 60px;
 			line-height: 95px;
-			color: $color_picton_blue_approx;
-			font-family: $font_6, $font_1;
+			color: $light_color;
 		}
 		strong {
+			@extend %strong_font;
 			display: block;
-			font-family: $font_2, $font_1;
 			font-weight: normal;
 			color: $white;
 			font-size: 114px;
@@ -2994,8 +2962,8 @@ td {
 		text-align: center;
 		color: $white;
 		h2 {
+			@extend %script_font;
 			color: $white;
-			font-family: $font_6, $font_1;
 			font-size: 30px;
 			line-height: 34px;
 			border-bottom: 2px solid $white;
@@ -3003,17 +2971,17 @@ td {
 			span {
 				position: relative;
 				display: inline-block;
-				background-color: $color_endeavour_approx;
+				background-color: $dark_color;
 				bottom: -15px;
 				padding-left: 25px;
 				padding-right: 25px;
 			}
 		}
 		a {
+			@extend %strong_font;
 			color: $white;
 			font-size: 36px;
 			line-height: 40px;
-			font-family: $font_2, $font_1;
 			letter-spacing: 3px;
 			&:hover {
 				color: $black;
@@ -3033,10 +3001,10 @@ td {
 		margin-right: 3px;
 		float: left;
 		width: 61px;
-		border: 3px solid $color_concrete_approx;
+		border: 3px solid $white_gray;
 		height: 37px;
 		font-size: 18px;
-		color: $color_cape_cod_approx;
+		color: $gray_dark;
 		padding-bottom: 2px;
 	}
 	.select-def-large {
@@ -3044,7 +3012,7 @@ td {
 	}
 }
 .footer {
-	background-color: $color_mine_shaft_approx;
+	background-color: $gray_dark;
 	color: $white;
 	font-size: 14px;
 	line-height: 17px;
@@ -3068,7 +3036,7 @@ td {
 	width: 725px;
 	margin: 0 auto;
 	background-color: $white;
-	border: 2px solid $color_mountain_mist_approx;
+	border: 2px solid $gray_light;
 	position: relative;
 	.form-change {
 		padding: 81px 67px 120px 75px;
@@ -3118,13 +3086,13 @@ td {
 	opacity: 0;
 }
 .popup-head {
-	border-bottom: 1px solid $color_cape_cod_approx;
+	border-bottom: 1px solid $gray_dark;
 	padding: 90px 0 19px;
 	margin-bottom: 32px;
 	h3 {
 		font-size: 36px;
 		line-height: 40px;
-		color: $color_fun_blue_approx;
+		color: $dark_color;
 	}
 }
 .article-options {
@@ -3143,7 +3111,7 @@ td {
 		//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 		transition: border-color 300ms;
 		&:focus {
-			border-bottom-color: $color_robins_egg_blue_approx;
+			border-bottom-color: $light_color;
 		}
 		&.has-value {
 			width: 0;
@@ -3183,10 +3151,10 @@ td {
 		background: transparent;
 		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 		border-radius: 0;
-		border-bottom-color: $color_shady_lady_approx;
+		border-bottom-color: $gray_light;
 		padding-bottom: 3px;
 		.select2-selection__rendered {
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 			font-size: 29px;
 			line-height: 32px;
 			font-weight: normal;
@@ -3207,7 +3175,7 @@ td {
 		}
 	}
 	.select2-selection--multiple {
-		border: 3px solid $color_concrete_approx;
+		border: 3px solid $white_gray;
 		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 		border-radius: 0;
 		.select2-selection__choice__remove {
@@ -3231,16 +3199,16 @@ td {
 		}
 	}
 	.select2-results__option--highlighted[aria-selected] {
-		background: $color_robins_egg_blue_approx;
+		background: $light_color;
 		color: $white;
 	}
 	.select2-results__option[aria-selected=true] {
-		background: $color_robins_egg_blue_approx;
+		background: $light_color;
 		color: $white;
 	}
 	&.alt {
 		.select2-results__option {
-			border-bottom: 1px solid $color_concrete_approx;
+			border-bottom: 1px solid $white_gray;
 			.select2-results__option {
 				padding-left: 6px;
 			}
@@ -3271,11 +3239,11 @@ input[type="search"] {
 .select2-dropdown {
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 0;
-	border-color: $color_shady_lady_approx;
+	border-color: $gray_light;
 }
 .select2-results__options {
 	font-size: 20px;
-	color: $color_robins_egg_blue_approx;
+	color: $light_color;
 }
 .select-multi-holder {
 	width: 100%;
@@ -3330,7 +3298,6 @@ input[type="search"] {
 				font-size: 14px;
 				line-height: 16px;
 				text-transform: none;
-				font-family: $font_0, $font_1;
 				text-transform: capitalize;
 				color: $white;
 				padding: 15px 2px 20px;
@@ -3490,7 +3457,7 @@ input[type="search"] {
 		a {
 			font-size: 11px;
 			line-height: 14px;
-			color: $color_fun_blue_approx;
+			color: $dark_color;
 		}
 		i {
 			top: 0;
@@ -3520,17 +3487,17 @@ input[type="search"] {
 			left: 0;
 			width: 100%;
 			height: 69px;
-			background-color: $color_robins_egg_blue_approx;
+			background-color: $light_color;
 			padding-top: 24px;
 			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 			border-radius: 8px;
 			&:hover {
 				background-color: transparent;
-				color: $color_robins_egg_blue_approx;
+				color: $light_color;
 			}
 		}
 		.btn-light:hover:after {
-			border-color: $color_robins_egg_blue_approx;
+			border-color: $light_color;
 			font-size: 15px;
 			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 			border-radius: 8px;
@@ -3587,7 +3554,6 @@ input[type="search"] {
 				text-align: center;
 				font-size: 14px;
 				line-height: 18px;
-				font-family: $font_0, $font_1;
 				font-weight: bold;
 				padding: 0 0 7px 0;
 				float: none;
@@ -3908,10 +3874,9 @@ input[type="search"] {
 	//original selectors
 	//.form-notification .form-head h2, .form-insurance h2
 	%extend_10 {
-		font-family: $font_2, $font_1;
 		font-size: 18px;
 		line-height: 22px;
-		color: $color_fun_blue_approx;
+		color: $dark_color;
 	}
 
 	.form-notification {
@@ -3947,7 +3912,7 @@ input[type="search"] {
 		label {
 			font-size: 18px;
 			line-height: 22px;
-			color: $color_robins_egg_blue_approx;
+			color: $light_color;
 		}
 		.form-row {
 			padding-bottom: 15px;
@@ -3999,7 +3964,7 @@ input[type="search"] {
 		a {
 			font-size: 11px;
 			line-height: 14px;
-			color: $color_mountain_mist_approx;
+			color: $gray_light;
 		}
 		li + li {
 			padding-top: 0;
@@ -4029,7 +3994,7 @@ input[type="search"] {
 			position: relative;
 			top: auto;
 			bottom: auto;
-			border-bottom: 1px solid $gray;
+			border-bottom: 1px solid $gray_half;
 			margin-bottom: 25px;
 			padding-bottom: 25px;
 		}
@@ -4041,7 +4006,7 @@ input[type="search"] {
 			line-height: 18px;
 			padding-top: 20px;
 			a {
-				color: $color_mountain_mist_approx;
+				color: $gray_light;
 			}
 		}
 	}
@@ -4404,7 +4369,7 @@ input[type="search"] {
 			h3 {
 				height: 101px;
 				width: 100%;
-				background-color: $color_concrete_approx;
+				background-color: $white_gray;
 				padding: 0 0 0 106px;
 				display: table;
 				font-size: 19px;
@@ -4421,7 +4386,7 @@ input[type="search"] {
 				padding: 0 28px 28px;
 				font-size: 16px;
 				line-height: 20px;
-				color: $color_robins_egg_blue_approx;
+				color: $light_color;
 			}
 		}
 		.section-body {
@@ -4611,7 +4576,7 @@ input[type="search"] {
 		left: 50px;
 		a {
 			font-size: 12px;
-			color: $color_cerulean_approx!important;
+			color: $light_color!important;
 		}
 	}
 	.header-home .logo {
@@ -4654,7 +4619,7 @@ input[type="search"] {
 		display: block;
 	}
 	.section-partners h1 {
-		border-bottom: 2px solid $color_silver_approx;
+		border-bottom: 2px solid $gray_lighter;
 	}
 	.list-rating h2 {
 		font-size: 14px;
@@ -4719,31 +4684,31 @@ input[type="search"] {
 			display: none;
 			&:checked {
 				~ label {
-					color: #FFD700;
+					color: $gold;
 					&:hover {
-						color: #FFED85;
+						color: $gold;
 						~ label {
-							color: #FFED85;
+							color: $gold;
 						}
 					}
 				}
 				+ label:hover {
-					color: #FFED85;
+					color: $gold;
 				}
 			}
 		}
 		label {
-			color: $color_alto_approx;
+			color: $gray_lighter;
 			float: right;
 			&:before {
 				margin: 2px;
 				font-size: 1.25em;
-				font-family: $font_7;
+				font-family: FontAwesome;
 				display: inline-block;
 				content: "\f005";
 			}
 			&:hover ~ input:checked ~ label {
-				color: #FFED85;
+				color: $gold;
 			}
 		}
 		.half:before {
@@ -4761,7 +4726,7 @@ input[type="search"] {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border: 3px solid $color_cerulean_approx;
+	border: 3px solid $light_color;
 	content: '';
 	position: absolute;
 }
@@ -4775,20 +4740,20 @@ input[type="search"] {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border: 3px solid $color_robins_egg_blue_approx;
+	border: 3px solid $light_color;
 	content: '';
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 7px;
 }
 .btn-book-secondary:hover:after {
-	border-color: $color_fun_blue_approx;
+	border-color: $dark_color;
 	display: none;
 }
 .btn-secondary:hover:after {
-	border-color: $color_fun_blue_approx;
+	border-color: $dark_color;
 }
 .btn-light:hover:after {
-	border-color: $color_quill_gray_approx;
+	border-color: $gray_lighter;
 }
 button::-moz-focus-inner {
 	padding: 0;
@@ -4802,7 +4767,7 @@ input::-moz-focus-inner {
 	max-width: 335px;
 }
 .form-groups + .form-groups {
-	border-top: 2px solid $color_ship_gray_approx;
+	border-top: 2px solid $gray_dark;
 	margin-top: 40px;
 	padding-top: 115px;
 }
@@ -4810,7 +4775,7 @@ input::-moz-focus-inner {
 	list-style-type: none;
 }
 .list-more-secondary h3 {
-	color: $color_ship_gray_approx;
+	color: $gray_dark;
 }
 .section-appointment-secondary .article {
 	padding-bottom: 0;
@@ -4830,7 +4795,7 @@ input::-moz-focus-inner {
 		}
 	}
 	+ .article {
-		border-top: 1px solid $color_quill_gray_approx;
+		border-top: 1px solid $gray_lighter;
 		margin-top: 30px;
 		padding-top: 50px;
 	}
@@ -4856,7 +4821,7 @@ input::-moz-focus-inner {
 	margin-left: 5px;
 }
 .select2-container.select2-container--default.alt .select2-dropdown {
-	border: 1px solid $color_concrete_approx;
+	border: 1px solid $white_gray;
 	border-top: none;
 	border-bottom: none;
 }
@@ -4884,7 +4849,7 @@ input::-moz-focus-inner {
 			left: 0;
 			right: 0;
 			height: 112px;
-			background: $color_robins_egg_blue_approx;
+			background: $light_color;
 		}
 		.current:after {
 			margin-top: 130px;
@@ -4895,8 +4860,8 @@ input::-moz-focus-inner {
 	}
 }
 .rating:not(:checked) > label:hover {
-	color: #FFD700;
+	color: $gold;
 	~ label {
-		color: #FFD700;
+		color: $gold;
 	}
 }

@@ -1,0 +1,18 @@
+$dark_color: hsl(212, 100%, 36%);
+$light_color: hsl(193, 100%, 48%);
+
+$main_hue: hue($light_color);
+
+$white: white;
+$white_gray: hsl($main_hue, 4%, 95%);
+
+$gray_lightest: hsl($main_hue, 3%, 90%);
+$gray_lighter:  hsl($main_hue, 3%, 75%);
+$gray_light:    hsl($main_hue, 3%, 66%);
+$gray_half:     hsl($main_hue, 3%, 50%);
+$gray_dark:     hsl($main_hue, 3%, 25%);
+
+$black: black;
+
+$gold: hsl(51, 100%, 50%);
+$red: hsl(358, 95%, 52%);
