@@ -8,28 +8,15 @@
 
 
 //urls
-$url_0: url("../images/sprite.png");
-$url_1: url("../images/sprite.png");
-$url_2: url("../images/sprite.png");
-$url_3: url("../images/sprite.png");
-$url_4: url("../images/sprite.png");
-$url_5: url("../images/sprite.png");
-$url_6: url("../images/sprite.png");
-$url_7: url("../images/arr.png");
-$url_8: url("../images/arr-right.png");
-$url_9: url("../images/sprite.png");
-$url_10: url("../images/sprite.png");
-$url_11: url("../images/sprite.png");
-$url_12: url("../images/sprite.png");
-$url_13: url("../images/review.png");
-$url_14: url("../images/review.png");
-$url_15: url("../images/sprite.png");
-$url_16: url("../images/sprite.png");
-$url_17: url("../images/media-bg.png");
-$url_18: url("../images/sprite.png");
-$url_19: url("../images/dropdown-arrow.png");
-$url_20: url("../images/sprite.png");
-$url_21: url("../images/ico-close.png");
+$sprite_url: url("../images/sprite.png");
+$url_media_bg: url("../images/media-bg.png");
+$url_dropdown_arrow: url("../images/dropdown-arrow.png");
+$url_ico_close: url("../images/ico-close.png");
+$url_arr_right: url("../images/arr-right.png");
+$url_arr: url("../images/arr.png");
+$url_review: url("../images/review.png");
+
+
 
 //@extend-elements
 //original selectors
@@ -311,7 +298,7 @@ small {
 	}
 }
 .btn-menu {
-	background: $url_0 no-repeat -199px -2px;
+	background: $sprite_url no-repeat -199px -2px;
 	width: 32px;
 	height: 21px;
 	display: block;
@@ -320,7 +307,7 @@ small {
 	text-indent: -4000px;
 }
 .btn-edit {
-	background: $url_0 no-repeat 0 -35px;
+	background: $sprite_url no-repeat 0 -35px;
 	width: 18px;
 	height: 18px;
 	display: inline-block;
@@ -334,7 +321,7 @@ small {
 	}
 }
 .btn-check {
-	background: $url_0 no-repeat -54px -35px;
+	background: $sprite_url no-repeat -54px -35px;
 	width: 18px;
 	height: 18px;
 	display: inline-block;
@@ -429,7 +416,7 @@ small {
 }
 .btn-settings {
 	display: block;
-	background: $url_0 no-repeat -242px -63px;
+	background: $sprite_url no-repeat -242px -63px;
 	width: 17px;
 	height: 18px;
 	&:hover {
@@ -453,7 +440,7 @@ small {
 	padding: 14px 13px 13px;
 }
 .btn-more {
-	background: $url_0 no-repeat -221px -153px;
+	background: $sprite_url no-repeat -221px -153px;
 	width: 49px;
 	height: 49px;
 	display: inline-block;
@@ -465,7 +452,7 @@ small {
 	}
 }
 .btn-scroll {
-	background: $url_0 no-repeat -275px -152px;
+	background: $sprite_url no-repeat -275px -152px;
 	width: 49px;
 	height: 49px;
 	display: block;
@@ -709,7 +696,7 @@ input[type="submit"] {
 		padding: 3px 0 0 39px;
 		display: block;
 		&:after {
-			background: $url_0 no-repeat -104px -30px;
+			background: $sprite_url no-repeat -104px -30px;
 			width: 23px;
 			height: 23px;
 			content: '';
@@ -749,7 +736,7 @@ input[type="submit"] {
 	}
 	.ui-datepicker-next {
 		@extend %extend_4;
-		background-image: $url_8!important;
+		background-image: $url_arr_right!important;
 		left: auto !important;
 		right: 8px;
 	}
@@ -789,7 +776,7 @@ input[type="submit"] {
 		border: 1px solid $gray_half;
 	}
 	.ui-datepicker-prev {
-		background: $url_7 no-repeat 0 0!important;
+		background: $url_arr no-repeat 0 0!important;
 	}
 }
 .ui-state-highlight {
@@ -806,7 +793,7 @@ input[type="submit"] {
 	line-height: 60px;
 }
 [class^="ico-"] {
-	background-image: $url_0;
+	background-image: $sprite_url;
 	background-repeat: no-repeat;
 }
 .ico-plus {
@@ -1793,7 +1780,7 @@ td {
 			font-size: 0;
 			line-height: 0;
 			text-indent: -4000px;
-			background-image: $url_0;
+			background-image: $sprite_url;
 			background-repeat: no-repeat;
 			margin-top: -10px;
 		}
@@ -1942,7 +1929,7 @@ td {
 	}
 }
 .logo {
-	background: $url_0 no-repeat 0 0;
+	background: $sprite_url no-repeat 0 0;
 	width: 190px;
 	height: 25px;
 	float: left;
@@ -2057,7 +2044,7 @@ td {
 		right: 68px;
 		width: 25px;
 		height: 28px;
-		background: $url_0 no-repeat -155px -30px;
+		background: $sprite_url no-repeat -155px -30px;
 	}
 }
 .menu-aside {
@@ -2069,7 +2056,7 @@ td {
 	@extend %extend_6;
 }
 .review {
-	background: $url_13 no-repeat 0 0;
+	background: $url_review no-repeat 0 0;
 	width: 133px;
 	height: 20px;
 	display: block;
@@ -2078,7 +2065,7 @@ td {
 		top: 0;
 		left: 0;
 		height: 100%;
-		background: $url_13 no-repeat 0 bottom;
+		background: $url_review no-repeat 0 bottom;
 		position: absolute;
 	}
 	em {
@@ -2281,7 +2268,7 @@ td {
 				content: '';
 				width: 12px;
 				height: 14px;
-				background: $url_0 no-repeat -207px -30px;
+				background: $sprite_url no-repeat -207px -30px;
 				position: absolute;
 				top: 5px;
 				left: 0;
@@ -2516,7 +2503,7 @@ td {
 		top: 37px;
 		left: -73px;
 		content: '';
-		background: $url_0 no-repeat -3px -67px;
+		background: $sprite_url no-repeat -3px -67px;
 	}
 	.section-head {
 		padding-bottom: 55px;
@@ -2699,7 +2686,7 @@ td {
 		}
 	}
 	.section-media {
-		background: $url_17 no-repeat 0 0;
+		background: $url_media_bg no-repeat 0 0;
 		width: 881px;
 		height: 375px;
 		padding: 21px 20px;
@@ -3074,7 +3061,7 @@ td {
 .popup-close {
 	width: 12px;
 	height: 13px;
-	background: $url_0 no-repeat -185px -30px;
+	background: $sprite_url no-repeat -185px -30px;
 	position: absolute;
 	top: 38px;
 	right: 37px;
@@ -3169,7 +3156,7 @@ td {
 				border: 0 none;
 				width: 13px;
 				height: 7px;
-				background: $url_19 no-repeat 0 0;
+				background: $url_dropdown_arrow no-repeat 0 0;
 				margin-top: -4px;
 			}
 		}
@@ -3720,7 +3707,7 @@ input[type="search"] {
 			width: auto;
 			position: relative;
 			&:after {
-				background-image: $url_0;
+				background-image: $sprite_url;
 				width: 30px;
 				height: 26px;
 				background-size: 500px;
@@ -3981,7 +3968,7 @@ input[type="search"] {
 		.close-menu {
 			top: 23px;
 			right: 26px;
-			background: $url_21 no-repeat 0 0;
+			background: $url_ico_close no-repeat 0 0;
 			width: 15px;
 			height: 16px;
 		}
