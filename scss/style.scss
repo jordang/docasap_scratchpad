@@ -452,15 +452,16 @@ small {
 	}
 }
 .btn-scroll {
-	background: $sprite_url no-repeat -275px -152px;
-	width: 49px;
-	height: 49px;
 	display: block;
-	font-size: 0;
-	line-height: 0;
-	text-indent: -4000px;
+	color: inherit;
 	margin: 0 auto;
+	opacity: 0.5;
+	font-size: 1.5em;
+	text-align: center;
+
+	&:hover{ color: inherit; opacity: 1; }
 }
+
 .btn-red {
 	border-color: $red!important;
 	color: $red;
@@ -2597,6 +2598,7 @@ td {
 }
 .section-landing {
 	background-color: $dark_color;
+	color: $white;
 	padding-top: 108px;
 	height: 100%;
 	position: relative;
