@@ -1,0 +1,51 @@
+@import "compass/css3/";
+
+//ADD STATES COVERED TO LIST HERE:
+$states: AK AS AZ CA DC DE FL GA IA ID IL IN KS KY MD MI MN MO ND NE NJ NY OH OR PA TN TX UT VA WA WI;
+
+//IT WILL UPDATE THE MAP AND THE COUNT
+
+
+#states-map {
+
+	width: 456px;
+	height: 283px;
+	display: block;
+
+
+	path {
+		fill: $dark_color;
+		stroke: transparentize($white,0.25);
+		stroke-width: 3;
+
+		&:hover {
+			fill: transparentize($white,0.75);
+			stroke: $white;
+			stroke-width: 6;
+		}
+	}
+
+
+
+	//Make list and create selected states styles:
+
+	%selected_state{
+		fill: $light_color;
+
+		&:hover {
+			fill: $white;
+		}
+	}
+
+	@each $state in $states {
+		##{$state}{ @extend %selected_state }
+	}
+}
+
+
+
+//Add the number of states
+
+#state_count:before {
+	content: "#{length($states)} ";
+}

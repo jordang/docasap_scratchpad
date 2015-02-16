@@ -5,7 +5,7 @@
 @import "magnific-popup";
 @import "select2";
 
-
+@import "states";
 
 //urls
 $sprite_url: url("../images/sprite.png");
@@ -2935,11 +2935,7 @@ td {
 	.section-image {
 		float: right;
 		padding-top: 52px;
-		svg {
-			width: 456px;
-			height: 283px;
-			display: block;
-		}
+
 	}
 	.section-actions {
 		padding-bottom: 120px;
@@ -4644,27 +4640,8 @@ input[type="search"] {
 		margin: 5px 0;
 	}
 }
-#AZ {
-	fill: $white!important;
-}
-#WA {
-	fill: $white!important;
-}
-#UT {
-	fill: transparent!important;
-}
-#KY {
-	fill: transparent!important;
-}
-#SD {
-	fill: transparent!important;
-}
-#WY {
-	fill: transparent!important;
-}
-#ID {
-	fill: transparent!important;
-}
+
+
 .rating {
 	border: none;
 	float: left;
