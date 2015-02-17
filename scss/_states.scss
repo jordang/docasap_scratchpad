@@ -1,9 +1,40 @@
-@import "compass/css3/";
-
 //ADD STATES COVERED TO LIST HERE:
-$states: AK AS AZ CA DC DE FL GA IA ID IL IN KS KY MD MI MN MO ND NE NJ NY OH OR PA TN TX UT VA WA WI;
-
 //IT WILL UPDATE THE MAP AND THE COUNT
+$states:
+		AK
+		AR
+		AS
+		AZ
+		CA
+		DC
+		DE
+		FL
+		GA
+		IA
+		ID
+		IL
+		IN
+		KS
+		KY
+		MD
+		MI
+		MN
+		MO
+		ND
+		NE
+		NJ
+		NY
+		OH
+		OR
+		PA
+		SD
+		TN
+		TX
+		UT
+		VA
+		WA
+		WI;
+
 
 
 #states-map {

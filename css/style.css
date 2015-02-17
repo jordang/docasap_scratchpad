@@ -5685,36 +5685,36 @@ img.mfp-img {
   border-color: #5897fb;
 }
 
-/* line 9, ../scss/_states.scss */
+/* line 40, ../scss/_states.scss */
 #states-map {
   width: 456px;
   height: 283px;
   display: block;
 }
-/* line 16, ../scss/_states.scss */
+/* line 47, ../scss/_states.scss */
 #states-map path {
   fill: #0056b8;
   stroke: rgba(255, 255, 255, 0.75);
   stroke-width: 3;
 }
-/* line 21, ../scss/_states.scss */
+/* line 52, ../scss/_states.scss */
 #states-map path:hover {
   fill: rgba(255, 255, 255, 0.25);
   stroke: white;
   stroke-width: 6;
 }
-/* line 32, ../scss/_states.scss */
-#states-map #AK, #states-map #AS, #states-map #AZ, #states-map #CA, #states-map #DC, #states-map #DE, #states-map #FL, #states-map #GA, #states-map #IA, #states-map #ID, #states-map #IL, #states-map #IN, #states-map #KS, #states-map #KY, #states-map #MD, #states-map #MI, #states-map #MN, #states-map #MO, #states-map #ND, #states-map #NE, #states-map #NJ, #states-map #NY, #states-map #OH, #states-map #OR, #states-map #PA, #states-map #TN, #states-map #TX, #states-map #UT, #states-map #VA, #states-map #WA, #states-map #WI {
+/* line 63, ../scss/_states.scss */
+#states-map #AK, #states-map #AR, #states-map #AS, #states-map #AZ, #states-map #CA, #states-map #DC, #states-map #DE, #states-map #FL, #states-map #GA, #states-map #IA, #states-map #ID, #states-map #IL, #states-map #IN, #states-map #KS, #states-map #KY, #states-map #MD, #states-map #MI, #states-map #MN, #states-map #MO, #states-map #ND, #states-map #NE, #states-map #NJ, #states-map #NY, #states-map #OH, #states-map #OR, #states-map #PA, #states-map #SD, #states-map #TN, #states-map #TX, #states-map #UT, #states-map #VA, #states-map #WA, #states-map #WI {
   fill: #00c0f5;
 }
-/* line 35, ../scss/_states.scss */
-#states-map #AK:hover, #states-map #AS:hover, #states-map #AZ:hover, #states-map #CA:hover, #states-map #DC:hover, #states-map #DE:hover, #states-map #FL:hover, #states-map #GA:hover, #states-map #IA:hover, #states-map #ID:hover, #states-map #IL:hover, #states-map #IN:hover, #states-map #KS:hover, #states-map #KY:hover, #states-map #MD:hover, #states-map #MI:hover, #states-map #MN:hover, #states-map #MO:hover, #states-map #ND:hover, #states-map #NE:hover, #states-map #NJ:hover, #states-map #NY:hover, #states-map #OH:hover, #states-map #OR:hover, #states-map #PA:hover, #states-map #TN:hover, #states-map #TX:hover, #states-map #UT:hover, #states-map #VA:hover, #states-map #WA:hover, #states-map #WI:hover {
+/* line 66, ../scss/_states.scss */
+#states-map #AK:hover, #states-map #AR:hover, #states-map #AS:hover, #states-map #AZ:hover, #states-map #CA:hover, #states-map #DC:hover, #states-map #DE:hover, #states-map #FL:hover, #states-map #GA:hover, #states-map #IA:hover, #states-map #ID:hover, #states-map #IL:hover, #states-map #IN:hover, #states-map #KS:hover, #states-map #KY:hover, #states-map #MD:hover, #states-map #MI:hover, #states-map #MN:hover, #states-map #MO:hover, #states-map #ND:hover, #states-map #NE:hover, #states-map #NJ:hover, #states-map #NY:hover, #states-map #OH:hover, #states-map #OR:hover, #states-map #PA:hover, #states-map #SD:hover, #states-map #TN:hover, #states-map #TX:hover, #states-map #UT:hover, #states-map #VA:hover, #states-map #WA:hover, #states-map #WI:hover {
   fill: white;
 }
 
-/* line 49, ../scss/_states.scss */
+/* line 80, ../scss/_states.scss */
 #state_count:before {
-  content: "31 ";
+  content: "33 ";
 }
 
 /* line 24, ../scss/style.scss */
