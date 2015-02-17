@@ -15,7 +15,8 @@ $url_ico_close: url("../images/ico-close.png");
 $url_arr_right: url("../images/arr-right.png");
 $url_arr: url("../images/arr.png");
 $url_review: url("../images/review.png");
-$docasap_logo_url: url("../images/docasap_logo_dark_bg.svg");
+$docasap_logo_mid_bg_url: url("../images/docasap_logo_mid_bg.svg");
+$docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 
 
 
@@ -1929,7 +1930,7 @@ td {
 }
 .docasap_logo {
 	background:{
-		image: $docasap_logo_url;
+		image: $docasap_logo_mid_bg_url;
 		repeat: no-repeat;
 		size: contain;
 	}
@@ -1940,6 +1941,9 @@ td {
 	line-height: 0;
 	text-indent: -4000px;
 	margin: 44px auto auto 1rem;
+
+	&.dark_bg { background-image: $docasap_logo_dark_bg_url }
+
 	&:hover {
 		opacity: 0.7;
 	}
