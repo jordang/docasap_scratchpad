@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin respond_to_width($screen){
+
+	@if ($screen == handheld) {
+		@media (max-width: $widthSmallBreakpoint ){ @content; } }
+
+	@if ($screen == not_handheld) {
+		@media (min-width: $widthSmallBreakpoint ){ @content; } }
+
+	@if ($screen == tablet) {
+		@media (max-width: $widthMediumBreakpoint ){ @content; } }
+	
+	@else {
+		@media (max-width: $screen ){ @content; } }
+}

@@ -1,5 +1,6 @@
 @import "fonts";
 @import "colors";
+@import "mixins";
 
 @import "jquery-ui";
 @import "magnific-popup";
@@ -23,12 +24,9 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 //@extend-elements
 //original selectors
 //.header .shell:after, .clearfix:after
-%extend_1 {
+%clear_fix {
 	width: 100%;
 	content: '';
-	font-size: 0;
-	line-height: 0;
-	text-indent: -4000px;
 	clear: both;
 	display: block;
 }
@@ -98,36 +96,18 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 	//Instead of the line below you could use @includebox-sizing($bs)
 	box-sizing: border-box;
 }
-article {
+article, aside, figcaption, figure, footer, header, main, section {
 	display: block;
 }
-aside {
-	display: block;
-}
-figcaption {
-	display: block;
-}
-figure {
-	display: block;
-}
-footer {
-	display: block;
-}
-header {
-	display: block;
-}
-main {
-	display: block;
-}
+
 nav {
 	display: block;
 	ul {
 		list-style-type: none;
 	}
 }
-section {
-	display: block;
-}
+
+
 html {
 	height: 100%;
 	overflow-y: scroll;
@@ -155,9 +135,8 @@ body {
 	height: 108px;
 	.shell {
 		*zoom: 1;
-		width: 1070px;
 		&:after {
-			@extend %extend_1;
+			@extend %clear_fix;
 		}
 	}
 	.nav-utilities {
@@ -172,7 +151,7 @@ body {
 .clearfix {
 	*zoom: 1;
 	&:after {
-		@extend %extend_1;
+		@extend %clear_fix;
 	}
 }
 .fsr-container {
@@ -202,7 +181,6 @@ body {
 	}
 }
 .shell {
-	width: 920px;
 	margin: 0 auto;
 }
 .shell-small {
@@ -287,7 +265,7 @@ small {
 	text-transform: uppercase;
 	background-color: $light_color;
 	text-align: center;
-	padding: 19px 0 18px;
+	padding: 1em 0.25em;
 	position: relative;
 	&:hover {
 		background-color: transparent;
@@ -1211,12 +1189,14 @@ td {
 		float: left;
 	}
 }
+
 .list-logos {
-	overflow: hidden;
+	text-align: center;
+	
 	li {
-		float: left;
-		width: 33%;
+		display: inline-block;
 		padding-top: 70px;
+		margin: auto 2em;
 	}
 	img {
 		display: inline-block;
@@ -1224,6 +1204,7 @@ td {
 		height: auto;
 	}
 }
+
 .list-icons {
 	font-size: 18px;
 	line-height: 22px;
@@ -1951,6 +1932,7 @@ td {
 .header-content {
 	float: right;
 	padding: 47px 0 0;
+	margin-right: 0.5rem;
 }
 .header-content-inner {
 	float: left;
@@ -2407,46 +2389,51 @@ td {
 		line-height: 24px;
 		color: $gray_half;
 	}
-	.article-entry {
-		float: left;
+	.help-blurb {
+		display: inline-block;
 		width: 350px;
 		padding-top: 15px;
+		margin-left: 10%;
+
+		@include respond_to_width(tablet){
+			display: block;
+			margin:auto;
+			width: 90%;
+		}
 	}
 	.article-images {
-		float: right;
-		width: 510px;
-		position: relative;
-		margin-right: 10px;
-		figure {
-			float: left;
-			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-			border-radius: 50%;
-			overflow: hidden;
+		width: 50%;
+		max-width: 510px;
+		display: inline-block;
+		vertical-align: top;
 
-			+ figure {
-				float: right;
-			}
-		}
-		&:after {
-			//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-			transform: translate(-50%,-50%);
+		@include respond_to_width(tablet){
+			float: none;
+			display: block;
+			margin: 2em auto 0;
+			width: 75%;
 		}
 	}
 	.article-actions {
-		float: left;
 		width: 100%;
-		padding-top: 77px;
-		h3 {
-			float: left;
+		margin: 5em auto auto;
+		text-align: center;
+
+
+
+		.for-providers {
+			@extend %strong_font;
+			display: inline;
 			font-size: 22px;
 			line-height: 26px;
 			color: $gray_dark;
 			letter-spacing: 2px;
-			padding: 17px 34px 0 0;
 		}
-		p {
-			float: left;
-			padding-right: 47px;
+		.homepage-action-buttons {
+			@extend %regular_font;
+			display: inline-block;
+
+			.btn { margin: 0.5em 0.5em;}
 		}
 	}
 }
@@ -2602,6 +2589,13 @@ td {
 		padding-top: 52px;
 	}
 }
+
+.main-homepage {
+	padding: 0 3em;
+
+	@include respond_to_width(handheld){ padding: 0 1em; }
+}
+
 .section-landing {
 	background-color: $dark_color;
 	color: $white;
@@ -3245,7 +3239,9 @@ input[type="search"] {
 .select2-search--dropdown {
 	display: none;
 }
-@media only screen and(max-width: 767px) {
+
+
+@include respond_to_width(tablet) {
 	body {
 		font-size: 12px;
 		line-height: 18px;
@@ -3262,7 +3258,6 @@ input[type="search"] {
 		height: 67px;
 		.shell {
 			width: auto;
-			padding: 0 28px;
 		}
 	}
 	.section-tabs {
@@ -3341,10 +3336,7 @@ input[type="search"] {
 			}
 		}
 	}
-	.shell {
-		width: auto;
-		padding: 0 28px;
-	}
+
 	.header-content-inner {
 		display: none;
 	}
@@ -3352,7 +3344,7 @@ input[type="search"] {
 		display: none;
 	}
 	.docasap_logo {
-		margin: 21px 0 0;
+		margin-top: 21px;
 		width: 135px;
 		height: 20px;
 	}
@@ -3523,20 +3515,7 @@ input[type="search"] {
 			font-size: 14px;
 			line-height: 18px;
 		}
-		.article-entry {
-			float: none;
-			width: auto;
-			padding: 29px 0;
-		}
-		.article-images {
-			float: none;
-			width: auto;
-			img {
-				width: 100%;
-				height: auto;
-				display: block;
-			}
-		}
+
 		.article-actions {
 			padding: 36px 0 54px;
 			text-align: center;
