@@ -15,6 +15,7 @@ $url_ico_close: url("../images/ico-close.png");
 $url_arr_right: url("../images/arr-right.png");
 $url_arr: url("../images/arr.png");
 $url_review: url("../images/review.png");
+$docasap_logo_url: url("../images/docasap_logo_dark_bg.svg");
 
 
 
@@ -1925,19 +1926,20 @@ td {
 	background-color: $dark_color;
 	width: 100%;
 	z-index: 9;
-	.logo {
-		background-position: 0 -218px;
-	}
 }
-.logo {
-	background: $sprite_url no-repeat 0 0;
-	width: 190px;
-	height: 25px;
+.docasap_logo {
+	background:{
+		image: $docasap_logo_url;
+		repeat: no-repeat;
+		size: contain;
+	}
+	width: 12rem;
+	height: 2rem;
 	float: left;
 	font-size: 0;
 	line-height: 0;
 	text-indent: -4000px;
-	margin-top: 44px;
+	margin: 44px auto auto 1rem;
 	&:hover {
 		opacity: 0.7;
 	}
@@ -3345,11 +3347,10 @@ input[type="search"] {
 	.nav-utilities {
 		display: none;
 	}
-	.logo {
-		margin: 21px 0 0 11px;
+	.docasap_logo {
+		margin: 21px 0 0;
 		width: 135px;
 		height: 20px;
-		background-size: 700px auto;
 	}
 	.header-content {
 		padding: 18px 8px 0 0;
@@ -4564,11 +4565,9 @@ input[type="search"] {
 			color: $light_color!important;
 		}
 	}
-	.header-home .logo {
+	.header-home .docasap_logo {
 		width: 130px;
 		height: 17px;
-		background-size: 650px auto;
-		background-position: 0 -142px;
 	}
 	.btn-book .ico-book {
 		left: 40px;
