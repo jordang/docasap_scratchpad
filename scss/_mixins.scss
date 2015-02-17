@@ -14,3 +14,63 @@
 	@else {
 		@media (max-width: $screen ){ @content; } }
 }
+
+
+@mixin build_button($color, $ghost){
+	@extend %button_standard;
+	@extend %antialias;
+
+
+	@if($ghost){
+		background-color: transparent;
+		border-color: $color;
+		color: $color;
+
+		&:hover{
+			background-color: $color;
+			color: $white;
+		}
+	}
+	@else{
+		background-color: $color;
+		border-color: $color;
+		color: $white;
+
+		&:hover{
+			background-color: transparent;
+			color: $color;
+		}
+	}
+}
+
+
+
+%antialias {
+	-webkit-font-smoothing: antialiased;
+}
+
+
+%button_standard {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1em;
+	position: relative;
+	border-width: 2px;
+	border-style: solid;
+
+	transition-property: background-color, color ;
+	transition-duration: 0.5s;
+}
+
+
+%light_filled_button{ @include build_button($light_color, false) }
+%light_ghost_button{ @include build_button($light_color, true) }
+
+%dark_filled_button{ @include build_button($dark_color, false) }
+%dark_ghost_button{ @include build_button($dark_color, true) }
+
+%gray_ghost_button{ @include build_button($gray_light, true) }
+%green_filled_button{ @include build_button($green, false) }

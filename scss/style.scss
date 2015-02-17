@@ -256,27 +256,17 @@ strong {
 small {
 	font-size: 80%;
 }
+
 .btn {
-	min-width: 263px;
-	display: inline-block;
-	font-size: 18px;
-	font-weight: bold;
-	color: $white;
-	text-transform: uppercase;
-	background-color: $light_color;
-	text-align: center;
-	padding: 1em 0.25em;
-	position: relative;
-	&:hover {
-		background-color: transparent;
-		color: $light_color;
-	}
+	@extend %dark_filled_button;
+
 	.ico-plus {
 		margin-right: 4px;
 		position: relative;
 		top: 1px;
 	}
 }
+
 .btn-menu {
 	background: $sprite_url no-repeat -199px -2px;
 	width: 32px;
@@ -311,83 +301,65 @@ small {
 	display: none;
 	margin-top: 5px;
 }
+
 .btn-book {
-	background-color: $light_color;
-	padding: 25px 0 23px 92px;
+	@extend %antialias;
+	background-color: transparent;
+	padding: 1em 2em;
 	display: inline-block;
-	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-	border-radius: 9px;
-	width: 287px;
+	border-radius: 5px;
 	font-weight: bold;
 	font-size: 19px;
-	line-height: 19px;
-	color: $white;
+	line-height: 1;
+	color: $light_color;
+	border: 2px solid $light_color;
 	text-transform: uppercase;
 	position: relative;
-	&:hover {
-		background-color: $white;
-		color: $light_color;
-		.ico-book {
-			background-position: -212px -216px;
-			width: 35px;
-		}
-	}
-	.ico-book {
-		position: absolute;
-		top: 50%;
-		left: 45px;
-		*margin-top: -15px;
-		//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: translateY(-50%);
-	}
-}
-.btn-book-secondary {
-	background-color: transparent;
-	border: 3px solid $white;
-	padding-left: 92px;
-	text-align: left;
-	padding-top: 30px;
-	padding-bottom: 31px;
-	&:hover .ico-book {
-		background-position: -212px -216px;
-		width: 35px;
-	}
-}
-.btn-book-teritary {
-	border-color: $light_color;
-	color: $light_color;
-	font-size: 19px;
-	letter-spacing: 1px;
+	vertical-align: middle;
+
 	&:hover {
 		background-color: $light_color;
-		border-color: $light_color;
 		color: $white;
-		.ico-book {
-			background-position: -234px 0;
+	}
+
+	&:before{
+		@extend .fa;
+		@extend .fa-calendar-o;
+		font-size: 2em;
+		margin-right: 0.25em;
+		vertical-align: middle;
+	}
+
+	.section-landing & {
+		color: $white;
+		border-color: $white;
+	}
+
+	&.appt-page-book {
+		color: $white;
+		border-color: $light_color;
+		background-color: $light_color;
+		max-width: 14em;
+		float: right;
+
+		&:before { float: left;}
+
+		&:hover {
+			color: $light_color;
+			background-color: transparent;
+		}
+
+		@include respond_to_width(handheld){
+			float: none;
+			display: block;
+			margin: auto;
 		}
 	}
-	.ico-book {
-		background-position: -212px -216px;
-		width: 34px;
-		height: 31px;
-	}
+
+	@include respond_to_width(tablet){ font-size: 16px; }
 }
-.btn-secondary {
-	font-size: 11px;
-	font-weight: bold;
-	letter-spacing: 0.5px;
-	background-color: $dark_color;
-	min-width: 0;
-	padding: 7px 26px;
-	min-width: 212px;
-	&:hover {
-		background-color: transparent;
-		color: $dark_color;
-	}
-	i {
-		margin: 0 5px -4px 0;
-	}
-}
+
+
 .btn-light {
 	background-color: $gray_lighter;
 	&:hover {
@@ -1073,22 +1045,42 @@ td {
 .list-buttons {
 	text-align: center;
 	overflow: hidden;
-	li {
-		float: left;
-		*width: 30%;
-		+ li {
-			margin-left: 15px;
-			*margin-left: 1%;
-			+ li {
-				*width: 37%;
-			}
+
+	li { 
+		display: inline-block;
+		vertical-align: top;
+		margin: 1em;
+	}
+
+	.list-button {
+		@extend %dark_filled_button;
+		max-width: 80%;
+	}
+
+	#checkin-phone {
+		@extend %green_filled_button;
+
+		&:before{
+			@extend .fa;
+			@extend .fa-check;
+			float:left;
+			font-size: 2em;
+		}
+
+		&:disabled{
+			@extend %gray_ghost_button;
 		}
 	}
-	.btn {
-		*min-width: 0;
-		*display: block;
+}
+
+#email-to-phone-notice {
+	display: none;
+
+	:disabled + & {
+		display: block;
 	}
 }
+
 .list-services {
 	overflow: hidden;
 	li {
@@ -1192,7 +1184,7 @@ td {
 
 .list-logos {
 	text-align: center;
-	
+
 	li {
 		display: inline-block;
 		padding-top: 70px;
@@ -2438,8 +2430,20 @@ td {
 	}
 }
 .main-head {
-	padding: 108px 0 35px;
+	padding: 108px 3em 35px;
+
+	@include respond_to_width(handheld){
+		padding: 1em 0 2em 1em;
+	}
 }
+
+.main-body{
+	padding-left: 3em;
+
+	@include respond_to_width(handheld){ padding-left: 1em;}
+}
+
+
 .main-head-secondary {
 	padding-top: 80px;
 	padding-bottom: 47px;
@@ -2457,10 +2461,7 @@ td {
 		}
 	}
 }
-.main-head-actions {
-	float: right;
-	margin: -6px 10px 0 0;
-}
+
 .main-actions {
 	text-align: center;
 	padding-bottom: 100px;
@@ -3417,12 +3418,7 @@ input[type="search"] {
 	.ui-datepicker {
 		margin: 0;
 	}
-	.btn-book-secondary {
-		font-size: 16px;
-		padding: 22px 0 21px 80px;
-		width: auto;
-		min-width: 242px;
-	}
+
 	.ico-x {
 		width: 8px;
 		height: 8px;
@@ -3448,43 +3444,7 @@ input[type="search"] {
 			top: 1px;
 		}
 	}
-	.list-buttons {
-		position: relative;
-		padding-bottom: 83px;
-		li {
-			float: none;
-			+ li {
-				margin: 13px 0 0;
-			}
-		}
-		.btn {
-			display: block;
-		}
-		.ico-human {
-			display: none;
-		}
-		.btn-light {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 69px;
-			background-color: $light_color;
-			padding-top: 24px;
-			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-			border-radius: 8px;
-			&:hover {
-				background-color: transparent;
-				color: $light_color;
-			}
-		}
-		.btn-light:hover:after {
-			border-color: $light_color;
-			font-size: 15px;
-			//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-			border-radius: 8px;
-		}
-	}
+
 	.list-services {
 		li {
 			float: none;
@@ -4003,9 +3963,7 @@ input[type="search"] {
 			padding-bottom: 5px;
 		}
 	}
-	.main-head {
-		padding: 39px 0 36px;
-	}
+
 	.main-head-secondary {
 		padding-bottom: 0;
 	}
@@ -4019,18 +3977,7 @@ input[type="search"] {
 			font-size: 12px;
 		}
 	}
-	.main-head-actions {
-		float: none;
-		margin: 0;
-		.btn-book {
-			display: block;
-			min-width: 0;
-			width: auto;
-			font-size: 15px;
-			line-height: 15px;
-			padding: 21px 0 20px 90px;
-		}
-	}
+
 	.main-actions {
 		padding: 50px 0;
 		.btn {
@@ -4669,34 +4616,12 @@ input[type="search"] {
 	display: block;
 	z-index: 4;
 }
-.btn:hover:after {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: 3px solid $light_color;
-	content: '';
-	position: absolute;
-}
+
 .valid-block .btn-check {
 	background-position: -54px -35px;
 	display: block;
 }
-.btn-book:hover:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: 3px solid $light_color;
-	content: '';
-	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-	border-radius: 7px;
-}
-.btn-book-secondary:hover:after {
-	border-color: $dark_color;
-	display: none;
-}
+
 .btn-secondary:hover:after {
 	border-color: $dark_color;
 }
