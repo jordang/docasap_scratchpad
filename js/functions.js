@@ -152,7 +152,7 @@
 		});
 
 		$('.j-btn').on('click', function (e){
-			$('html').animate({
+			$('html, body').animate({
 				scrollTop: $('.j-sect').offset().top
 			},1000);
 
@@ -363,6 +363,16 @@
 					scrollTop: $('body').find(tab).offset().top - parseInt($('.tabs-nav').css('z-index')) - 40}
 			, 500);
 
+			e.preventDefault();
+		})
+
+		$('.btn-scroll').on('click', function (e){
+			var sectHeight = $('.j-scroll').offset().top;
+
+			$('body, html').animate({
+				scrollTop: sectHeight
+			});
+			
 			e.preventDefault();
 		})
 
