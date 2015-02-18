@@ -3206,6 +3206,7 @@ input[type="search"] {
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 0;
 	border-color: $gray_light;
+	min-width: 25em;
 }
 .select2-results__options {
 	font-size: 20px;
