@@ -2936,12 +2936,12 @@ body, .nav-secondary h3, .form-user label, .form-login h3, .article-help .articl
 }
 
 /* line 63, ../scss/_fonts.scss */
-h3, .form-user h2, .tabs-nav a, .tab-body .tab-images p, .header-content-inner h3, .article-help .article-actions .for-providers, .section-landing h1, .section-states .section-entry strong, .section-states .section-links a {
+h3, .form-user h2, .tabs-nav a, .tab-body .tab-images p, .header-content-inner h3, .article-help .article-actions .for-providers, .section-landing h1, .section-works .section-head p em, .section-states .section-entry strong, .section-states .section-links a {
   font-family: Bebas, "HelveticaBold", Arial, sans-serif;
 }
 
 /* line 64, ../scss/_fonts.scss */
-.form-question .form-body h3, .section-partners-secondary h1, .section-landing h2, .section-works .section-head p em, .section-states .section-entry h2, .section-states .section-links h2 {
+.form-question .form-body h3, .section-partners-secondary h1, .section-landing h2, .section-states .section-entry h2, .section-states .section-links h2 {
   font-family: dancingScript, Helvetica, Arial, sans-serif;
 }
 

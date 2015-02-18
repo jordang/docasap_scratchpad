@@ -2681,10 +2681,10 @@ td {
 			color: $gray_half;
 			line-height: 34px;
 			em {
-				@extend %script_font;
-				font-style: normal;
+				@extend %strong_font;
 				color: $light_color;
-				font-size: 38px;
+				font-style: normal;
+				letter-spacing: 0.05em;
 			}
 		}
 	}
