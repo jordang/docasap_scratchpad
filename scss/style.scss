@@ -2662,7 +2662,8 @@ td {
 	padding: 112px 0;
 }
 .section-works {
-	padding: 100px 0 84px;
+	padding: 100px 3em 84px;
+
 	.slider {
 		width: 506px;
 	}
@@ -2701,7 +2702,7 @@ td {
 		border-right: 0;
 		margin: 73px 0 70px;
 		h3 {
-			font-size: 60px;
+			font-size: 3em;
 			line-height: 80px;
 			letter-spacing: 3px;
 			color: $light_color;
@@ -2710,17 +2711,6 @@ td {
 	.section-actions {
 		text-align: center;
 		padding-bottom: 67px;
-		.btn {
-			margin: 0 20px;
-			background-color: $dark_color;
-			&:hover {
-				background-color: transparent;
-				color: $dark_color;
-			}
-		}
-		.btn:hover:after {
-			border-color: $dark_color;
-		}
 	}
 	.btn-scroll {
 		margin-top: 4em;
@@ -2819,28 +2809,16 @@ td {
 			min-height: 150px;
 		}
 	}
-	.btn {
-		margin: 0 20px;
-	}
 }
+.section-ops .btn { @extend %light_filled_button; }
+
 .section-why-secondary {
 	background-color: $light_color;
 	padding-bottom: 125px;
-	.btn {
-		background-color: $dark_color;
-		margin: 0 20px;
-		&:hover {
-			background-color: $black;
-			background-color: transparent;
-			color: $dark_color;
-		}
-	}
+
 	.list-more li {
 		width: 33%;
 		margin: 0;
-	}
-	.btn:hover:after {
-		border-color: $dark_color;
 	}
 }
 .section-case {
@@ -2901,7 +2879,7 @@ td {
 }
 .section-states {
 	background-color: $dark_color;
-	padding: 155px 0;
+	padding: 155px 4em 0;
 	min-height: 100%;
 	.section-head {
 		text-align: center;
@@ -2940,8 +2918,10 @@ td {
 	}
 	.section-actions {
 		padding-bottom: 120px;
-		.btn + .btn {
-			margin-left: 40px;
+		text-align: center;
+		.btn {
+			@extend %light_filled_button;
+			margin: auto 2em;
 		}
 	}
 	.section-links {
@@ -3269,7 +3249,6 @@ input[type="search"] {
 				padding: 34px 0 35px;
 				font-size: 26px;
 				color: $white;
-				margin: 0 -28px;
 			}
 		}
 		.tabs-nav {
@@ -4172,7 +4151,7 @@ input[type="search"] {
 		}
 		.section-image {
 			float: none;
-			svg {
+			#states-map {
 				width: 100%;
 				height: 163px;
 			}
