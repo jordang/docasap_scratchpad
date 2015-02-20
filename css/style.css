@@ -75,12 +75,18 @@ body {
     font-size: 15px;
   }
 }
-/* line 24, ../scss/style.scss */
+@media (max-width: 425px) {
+  /* line 15, ../scss/style.scss */
+  .dialog {
+    padding-left: 0;
+  }
+}
+/* line 25, ../scss/style.scss */
 .dialog > p {
   margin-top: 2em;
 }
 
-/* line 30, ../scss/style.scss */
+/* line 31, ../scss/style.scss */
 h1 {
   font-weight: bold;
   font-size: 8em;
@@ -89,30 +95,30 @@ h1 {
   text-transform: uppercase;
 }
 
-/* line 39, ../scss/style.scss */
+/* line 40, ../scss/style.scss */
 h2 {
   color: white;
   font-size: 2.5em;
   margin: -1em auto 0;
   line-height: 0.8em;
 }
-/* line 47, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 h2 p {
   margin: 0;
 }
 
-/* line 50, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 h2, p {
   margin-left: 50px;
 }
 
-/* line 52, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 p a {
   text-decoration: none;
   color: white;
 }
 
-/* line 57, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 footer {
   margin-top: 5em;
 }

@@ -4,7 +4,8 @@
 @import 'style';
 
 .captcha {
-	margin: 3em auto auto 50px;;
+	margin: 3em auto auto 50px;
+	@media (max-width: 425px){ margin-left: 0;}
 }
 
 #recaptcha_table {
