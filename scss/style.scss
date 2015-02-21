@@ -554,7 +554,7 @@ input[type="submit"] {
 	padding: 8px 20px 9px 22px;
 
 	@include input-placeholder {
-		color: $white;
+		color: mix($white,transparent,50%);
 	}
 
 }
@@ -562,11 +562,7 @@ input[type="submit"] {
 	background-color: $white;
 	color: $black;
 }
-.field-teritary {
-	@include input-placeholder {
-		color: $white;
-	}
-}
+
 .form-col {
 	float: left;
 }
@@ -1276,6 +1272,13 @@ td {
 	.j-review {
 		min-height: 37px;
 	}
+
+	.j-edit{
+		input{
+			margin-right: 1em;
+		}
+	}
+
 	.frm-row {
 		padding-bottom: 5px;
 		float: left;
