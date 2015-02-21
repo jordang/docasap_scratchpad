@@ -73,13 +73,6 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 	background-color: transparent;
 }
 
-//original selectors
-//.menu-aside, .menu-content
-%extend_6 {
-	width: 270px;
-	padding-bottom: 130px;
-	position: relative;
-}
 
 //original selectors
 //.form-add-inline .custom-select.has-selected-value ~ .form-next-step, .form-add-inline .field.has-value ~ .form-next-step
@@ -97,7 +90,14 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 	outline: 0;
 	//Instead of the line below you could use @includebox-sizing($bs)
 	box-sizing: border-box;
+
+	@include input-placeholder {
+		color: mix($gray_lighter, $white, 75%);
+		text-align: center;
+	}
 }
+
+
 article, aside, figcaption, figure, footer, header, main, section {
 	display: block;
 }
@@ -122,7 +122,6 @@ body {
 	height: 100%;
 	background: $white;
 	font-size: 14px;
-	line-height: 20px;
 	color: $gray_half;
 }
 .alignleft {
@@ -215,26 +214,26 @@ body {
 	display: none;
 }
 h1 {
+	@extend %antialias;
 	font-size: 48px;
-	line-height: 52px;
 	color: $dark_color;
 	font-weight: normal;
 }
 h2 {
+	@extend %antialias;
 	font-size: 30px;
-	line-height: 34px;
 	color: $light_color;
 	font-weight: normal;
 }
 h3 {
+	@extend %antialias;
 	@extend %strong_font;
 	font-size: 36px;
-	line-height: 40px;
 	font-weight: normal;
 }
 h4 {
+	@extend %antialias;
 	font-size: 14px;
-	line-height: 18px;
 	color: $gray_dark;
 }
 a {
@@ -467,9 +466,7 @@ small {
 		@extend %regular_font;
 		font-weight: bold;
 		font-size: 24px;
-		line-height: 30px;
 		color: $gray_dark;
-		padding-bottom: 10px;
 	}
 
 	a {
@@ -505,6 +502,8 @@ small {
 		}
 	}
 }
+
+
 button {
 	@extend %extend_2;
 	cursor: pointer;
@@ -512,9 +511,6 @@ button {
 }
 input {
 	@extend %extend_2;
-	&:-moz-placeholder {
-		color: $gray_dark;
-	}
 }
 select {
 	@extend %extend_2;
@@ -534,12 +530,7 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-::-webkit-input-placeholder { color: $gray_dark; }
-::-moz-placeholder { color: $gray_dark; }
 
-:-ms-input-placeholder {
-	color: $gray_dark;
-}
 .field {
 	border: 3px solid $white_gray;
 	font-size: 18px;
@@ -561,22 +552,18 @@ input[type="submit"] {
 	border: 3px solid $white;
 	color: $white;
 	padding: 8px 20px 9px 22px;
-	&:-ms-input-placeholder {
+
+	@include input-placeholder {
 		color: $white;
 	}
-	&:-moz-placeholder {
-		color: $white;
-	}
+
 }
 .field-teritary[disabled] {
 	background-color: $white;
 	color: $black;
 }
 .field-teritary {
-	&::-webkit-input-placeholder {
-		color: $white;
-	}
-	&::-moz-placeholder {
+	@include input-placeholder {
 		color: $white;
 	}
 }
@@ -1425,11 +1412,6 @@ td {
 		text-align: left;
 		padding: 0.5em;
 		line-height: 1.2;
-
-		@include input-placeholder {
-			text-align: center;
-			color: mix($gray_lighter, white );
-		};
 	}
 	.form-row {
 		padding-bottom: 19px;
@@ -1944,66 +1926,83 @@ td {
 	height: 100%;
 	overflow: auto;
 	background-color: $white;
-	padding: 90px 0 0;
+	padding: 3em 2em 0;
 	z-index: 99999;
 	opacity: 0;
 	transform: scale(2);
 	transition: opacity 0.2s, transform 0.2s;
 	font-size: 18px;
+	text-align: center;
 
 
-	.shell {
-		width: 670px;
+	.menu-aside, .menu-content {
+		padding: 0 0 2em;
 		position: relative;
-		margin-bottom: 100px;
-		&:before {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 285px;
-			border-right: 1px solid $gray_lighter;
-			content: '';
-		}
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
 	}
+
+	.menu-aside {
+		border-right: 1px solid $gray_lighter;
+		margin-bottom: 2em;
+	}
+
+	$col_space: 8%;
+	.menu-aside { padding-right: $col_space; }
+	.menu-content { padding-left: $col_space; }
 
 	.nav-secondary {
 		margin-top: 3em;
 	}
 
-	.nav-teritary {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-	}
+	.nav-teritary { margin-top: 5em; }
+
 	address {
-		font-size: 18px;
-		line-height: 30px;
+		margin-top: 4em;
 		color: $gray_light;
 		font-style: normal;
-		position: absolute;
-		bottom: 0;
-		left: 0;
+
+		.info_line:last-child { margin-top: 1em; }
 	}
 	.close-menu {
 		color: $gray_lighter;
 		position: absolute;
-		top: 37px;
-		right: 68px;
-		font-size: 16px;
+		top: 1em;
+		right: 2em;
+		font-size: 20px;
 		&:before{content: "\2715";}
 	}
 
-	@include respond_to_width(handheld){ font-size: 12px; }
+	.closing-menu & {
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transform: scale(2);
+		transition: opacity 0.3s, transform 0.3s;
+	}
+
+	@include respond_to_width(handheld){
+		font-size: 12px;
+		padding-top: 2em;
+	}
+
+	@include respond_to_width(525px){
+		.menu-aside, .menu-content { 
+			display: block;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
+		.menu-aside{
+			border-right: none;
+			border-bottom: 1px solid $gray_lighter;
+		}
+
+		.nav-teritary { margin-top: 2em;}
+	}
 }
-.menu-aside {
-	float: left;
-	line-height: 1.2;
-	@extend %extend_6;
-}
-.menu-content {
-	float: right;
-	@extend %extend_6;
-}
+
 .review {
 	background: $url_review no-repeat 0 0;
 	width: 133px;
@@ -2645,10 +2644,9 @@ td {
 		h1 {
 			padding-bottom: 20px;
 		}
-		p {
+		h2 {
 			font-size: 30px;
 			color: $gray_half;
-			line-height: 34px;
 			em {
 				@extend %strong_font;
 				color: $light_color;
@@ -2656,12 +2654,14 @@ td {
 				letter-spacing: 0.05em;
 			}
 		}
+
 	}
 	.section-media {
 		background: $url_media_bg no-repeat 0 0;
 		width: 881px;
 		height: 375px;
 		padding: 21px 20px;
+		margin: auto;
 	}
 	.section-title {
 		text-align: center;
@@ -2689,10 +2689,12 @@ td {
 		background-color: $light_color;
 		text-align: center;
 		padding: 115px 0 0 0;
-		h1 {
-			padding-bottom: 70px;
-		}
+
+		h1 { padding-bottom: 70px; }
 	}
+
+	.no-wrap { white-space: nowrap; }
+
 	.tabs-body .shell {
 		width: 760px;
 	}
@@ -2807,11 +2809,14 @@ td {
 	}
 	.list-icons-secondary {
 		overflow: hidden;
+		max-width: 900px;
+		margin: auto;
 		i {
 			left: 70px;
 		}
 		li {
 			float: left;
+			text-align: left;
 			width: 50%;
 			padding: 0 60px 70px 120px;
 			&:nth-child(2n+1) {
@@ -3194,15 +3199,12 @@ input[type="search"] {
 @include respond_to_width(tablet) {
 	body {
 		font-size: 12px;
-		line-height: 18px;
 	}
 	h1 {
 		font-size: 26px;
-		line-height: 30px;
 	}
 	h3 {
 		font-size: 18px;
-		line-height: 20px;
 	}
 	.header {
 		height: 67px;
@@ -3221,7 +3223,7 @@ input[type="search"] {
 			}
 		}
 		.tabs-nav {
-			margin: 0 -28px;
+			padding: 0 -28px;
 			z-index: 52;
 			li {
 				padding-bottom: 0;
@@ -3351,9 +3353,6 @@ input[type="search"] {
 		}
 		.section-head {
 			padding-bottom: 35px;
-			h1 {
-				margin: 0 -10px;
-			}
 			p {
 				font-size: 20px;
 			}
@@ -3807,65 +3806,14 @@ input[type="search"] {
 			}
 		}
 	}
-	.nav {
-		li {
-			padding-bottom: 6px;
-		}
-		a {
-			font-weight: normal;
-		}
-	}
+
 	.nav-teritary {
 		li + li {
 			padding-top: 0;
 		}
 	}
-	.menu {
-		padding: 70px 26px 0;
-		.shell {
-			margin-bottom: 50px;
-			&:before {
-				display: none;
-			}
-		}
-		.close-menu {
-			top: 23px;
-			right: 26px;
-		}
-		.nav {
-			padding: 0 0 6px 0;
-		}
-
-		.nav-teritary {
-			position: relative;
-			top: auto;
-			bottom: auto;
-			border-bottom: 1px solid $gray_half;
-			margin-bottom: 25px;
-			padding-bottom: 25px;
-		}
-		address {
-			position: relative;
-			bottom: auto;
-			left: auto;
-			font-size: 11px;
-			line-height: 18px;
-			padding-top: 20px;
-			a {
-				color: $gray_light;
-			}
-		}
-	}
 
 
-
-
-	.menu-aside, .menu-content {
-		float: none;
-		width: auto;
-		height: auto!important;
-		padding: 0;
-	}
 
 	.nav-secondary {
 		li {
@@ -4019,8 +3967,7 @@ input[type="search"] {
 		padding: 60px 0 80px;
 		.section-head {
 			padding-bottom: 40px;
-			h1 {
-			}
+
 			p {
 				padding: 0;
 				font-size: 18px;
@@ -4028,11 +3975,12 @@ input[type="search"] {
 			}
 		}
 		.list-icons-secondary {
+			margin-left: 1em;
+
 			li {
 				float: none;
 				width: auto;
 				padding: 0 0 30px 50px;
-				text-align: left;
 			}
 			i {
 				left: 0;
@@ -4044,7 +3992,6 @@ input[type="search"] {
 			h3 {
 				font-size: 21px;
 				line-height: 27px;
-				margin: 0 -10px;
 			}
 		}
 		.btn {
@@ -4108,9 +4055,8 @@ input[type="search"] {
 			h1 {
 				padding-bottom: 12px;
 			}
-			p {
+			h2 {
 				font-size: 14px;
-				line-height: 20px;
 				em {
 					font-size: 18px;
 				}
@@ -4586,15 +4532,7 @@ input::-moz-focus-inner {
 	text-align: center;
 	padding: 20px 0 100px;
 }
-.closing-menu .menu {
-	top: 0;
-	left: 0;
-	opacity: 0;
-	//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-	transform: scale(2);
-	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-	transition: opacity 0.3s, transform 0.3s;
-}
+
 .select2-selection__choice + .select2-selection__choice:before {
 	content: '-';
 	display: inline-block;
