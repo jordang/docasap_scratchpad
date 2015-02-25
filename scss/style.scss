@@ -2429,6 +2429,13 @@ td {
 		padding: 0 2em;
 		max-width: 51em;
 	}
+
+	.field, .select2-search__field{
+		@include input-placeholder {
+			color: mix($gray_lighter, $white, 75%);
+			text-align: center;
+		}
+	}
 }
 
 .section-user {
@@ -2643,6 +2650,9 @@ td {
 }
 .section-add {
 	padding: 112px 0;
+	width: 100%;
+	margin: auto;
+	max-width: 50em;
 }
 .section-works {
 	padding: 100px 3em 84px;
@@ -4138,13 +4148,7 @@ input[type="search"] {
 			padding-bottom: 0;
 		}
 	}
-	.section-add {
-		padding: 47px 0 0;
-		.form-head {
-			margin: 0 -10px;
-			padding-bottom: 37px;
-		}
-	}
+
 	.field-first {
 		width: 175px;
 	}
