@@ -37,7 +37,7 @@
     .select2-container .select2-search--inline .select2-search__field {
       border: none;
       font-size: 100%;
-      margin-top: 5px; }
+    }
 
 .select2-dropdown {
   background-color: white;
@@ -173,9 +173,8 @@
     border: 1px solid #aaa;
     border-radius: 4px;
     cursor: default;
-    float: left;
+    display: inline;
     margin-right: 5px;
-    margin-top: 5px;
     padding: 0 5px; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     color: #999;

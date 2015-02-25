@@ -121,7 +121,7 @@ body {
 	@extend %regular_font;
 	height: 100%;
 	background: $white;
-	font-size: 14px;
+	font-size: 16px;
 	color: $gray_half;
 }
 .alignleft {
@@ -532,15 +532,15 @@ input[type="submit"] {
 
 
 .field {
-	border: 3px solid $white_gray;
-	font-size: 18px;
-	line-height: 20px;
+	border: 1px solid $gray_lightest;
+	font-size: 1em;
+	line-height: 1.1;
+	padding: 0.75em 1em;
 	color: $gray_dark;
-	padding: 2px 8px 9px;
 }
+
 .field-secondary {
 	width: 100%;
-	padding: 8px 20px 9px;
 }
 .field-name {
 	padding-top: 6px;
@@ -549,9 +549,7 @@ input[type="submit"] {
 .field-teritary {
 	width: 100%;
 	background: transparent;
-	border: 3px solid $white;
 	color: $white;
-	padding: 8px 20px 9px 22px;
 
 	@include input-placeholder {
 		color: mix($white,transparent,50%);
@@ -587,10 +585,8 @@ input[type="submit"] {
 }
 .form-btn {
 	@extend %light_filled_button;
-	font-size: 18px;
-	width: 263px;
-	height: 57px;
-
+	font-size: 1.2em;
+	min-width: 10em;
 }
 .form-group {
 	padding-bottom: 70px;
@@ -1243,16 +1239,13 @@ td {
 	}
 	p {
 		float: left;
-		font-size: 18px;
-		padding-top: 4px;
 		+ .btn-edit {
 			margin-top: -2px;
 		}
 	}
 	label {
 		@extend %regular_font;
-		font-size: 30px;
-		line-height: 34px;
+		font-size: 1.2em;
 		color: $light_color;
 		display: block;
 		padding-bottom: 2px;
@@ -1321,11 +1314,9 @@ td {
 		padding-bottom: 42px;
 	}
 	label {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 1.2em;
 		color: $gray_dark;
 		display: block;
-		padding-top: 3px;
 	}
 	.form-row {
 		padding-bottom: 34px;
@@ -1351,11 +1342,9 @@ td {
 	}
 	label {
 		float: left;
-		width: 280px;
-		font-size: 30px;
-		line-height: 34px;
+		width: 10em;
+		font-size: 1.2em;
 		color: $light_color;
-		padding-top: 2px;
 	}
 	.form-row {
 		padding-bottom: 34px;
@@ -1370,26 +1359,16 @@ td {
 	.form-actions {
 		overflow: hidden;
 		.btn {
+			@extend %light_filled_button;
 			float: left;
-			height: 57px;
-			background-color: $light_color;
-			color: $white;
-			border: 0;
 			position: relative;
-			border: 3px solid $light_color;
-			padding-top: 16px;
-			&:hover {
-				background-color: transparent;
-				color: $light_color;
-				border-color: $light_color;
-			}
+
+			&:hover { color: white; }
+
 			+ .btn {
-				margin-left: 17px;
-				*height: 17px;
+				margin-left: 2em;
+				@include respond_to_width(tablet){ margin-left: auto; }
 			}
-		}
-		.btn:hover:after {
-			display: none;
 		}
 	}
 }
@@ -2439,22 +2418,56 @@ td {
 		min-width: 355px;
 	}
 }
+
+%user_sections {
+	padding: 6em 0 3em;
+	@include respond_to_width(handheld){ padding: 3em 0 2em; }
+
+	.section-head, .section-body { 
+		margin: auto;
+		width: 100%;
+		padding: 0 2em;
+		max-width: 51em;
+	}
+}
+
 .section-user {
-	padding: 116px 0 90px 0;
+	@extend %user_sections;
+
 	.section-head {
-		padding-bottom: 49px;
+		margin-bottom: 1em;
 	}
 	.section-actions {
-		border-top: 1px solid $gray_dark;
-		padding-top: 58px;
+		padding-top: 4em;
+	}
+
+	.form-btn{
+		@extend %light_ghost_button;
 	}
 }
 .section-gray {
 	background-color: $white_gray;
 }
+
+.section-other-users {
+	.form-groups {
+		border-bottom: 1px dotted $gray_light;
+	}
+
+	#add_patient_button{
+		@extend %light_filled_button;
+
+		&:before {
+			@extend .fa;
+			@extend .fa-plus;
+			font-size: 1.25em;
+			vertical-align: middle;
+		}
+	}
+}
 .section-security {
+	@extend %user_sections;
 	background-color: $dark_color;
-	padding: 102px 0 192px;
 }
 .section-appointment {
 	background-color: $white_gray;
@@ -3117,9 +3130,10 @@ td {
 		}
 	}
 	.select2-selection--multiple {
-		border: 3px solid $white_gray;
-		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+		@extend .field;
 		border-radius: 0;
+		height: 2.792em; //TODO: Fix to match heights with flexbox instead;
+
 		.select2-selection__choice__remove {
 			position: absolute;
 			opacity: 0;
@@ -3136,8 +3150,6 @@ td {
 			margin-right: 3px;
 		}
 		.select2-selection__rendered {
-			padding: 4px 16px;
-			font-size: 18px;
 		}
 	}
 	.select2-results__option--highlighted[aria-selected] {
@@ -3185,7 +3197,6 @@ input[type="search"] {
 	min-width: 25em;
 }
 .select2-results__options {
-	font-size: 20px;
 	color: $light_color;
 }
 .select-multi-holder {
@@ -3670,8 +3681,8 @@ input[type="search"] {
 	}
 	.form-user {
 		h2 {
-			font-size: 18px;
-			line-height: 22px;
+			font-size: 1.5em;
+			line-height: 1.2;
 			float: none;
 			+ .btn-edit {
 				margin: 0;
@@ -3680,14 +3691,8 @@ input[type="search"] {
 				right: 0;
 			}
 		}
-		label {
-			font-size: 18px;
-			line-height: 22px;
-			padding-bottom: 0;
-		}
+
 		p {
-			font-size: 14px;
-			line-height: 20px;
 			float: none;
 			+ .btn-edit {
 				margin: 0;
@@ -3702,13 +3707,7 @@ input[type="search"] {
 		.form-row {
 			padding-bottom: 8px;
 		}
-		.form-btn {
-			width: 209px;
-			height: 44px;
-			font-size: 15px;
-			line-height: 18px;
-			margin-top: 10px;
-		}
+
 		.j-review {
 			min-height: 0;
 		}
@@ -3739,14 +3738,7 @@ input[type="search"] {
 	}
 
 	.form-notification {
-		.form-btn {
-			width: 209px;
-			height: 44px;
-			font-size: 15px;
-			line-height: 18px;
-			margin-top: 10px;
-			margin-top: 0;
-		}
+
 		.form-head {
 			padding-bottom: 10px;
 			h2 {
@@ -3755,24 +3747,14 @@ input[type="search"] {
 		}
 	}
 	.form-insurance {
-		.form-btn {
-			width: 209px;
-			height: 44px;
-			font-size: 15px;
-			line-height: 18px;
-			margin-top: 10px;
-		}
+
 		.form-head {
 			padding-bottom: 10px;
 		}
 		h2 {
 			@extend %extend_10;
 		}
-		label {
-			font-size: 18px;
-			line-height: 22px;
-			color: $light_color;
-		}
+
 		.form-row {
 			padding-bottom: 15px;
 		}
@@ -3788,11 +3770,7 @@ input[type="search"] {
 			width: auto;
 			float: none;
 		}
-		label {
-			font-size: 18px;
-			line-height: 22px;
-			padding-bottom: 10px;
-		}
+
 		.form-head {
 			padding-bottom: 10px;
 		}
@@ -3803,10 +3781,7 @@ input[type="search"] {
 			float: none;
 			width: 100%;
 			min-width: 0;
-			+ .btn {
-				margin-left: 0;
-				margin-top: 20px;
-			}
+			margin: 0.5em auto;
 		}
 	}
 
@@ -3845,10 +3820,7 @@ input[type="search"] {
 			display: block;
 		}
 	}
-	.section-security {
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
+
 	.section-entry {
 		padding-top: 40px;
 		h1 {
@@ -4107,13 +4079,6 @@ input[type="search"] {
 				padding: 14px 0;
 				min-width: 0;
 			}
-		}
-	}
-	.section-user {
-		padding-top: 40px;
-		padding-bottom: 20px;
-		.section-head {
-			padding-bottom: 18px;
 		}
 	}
 	.list-logos {
@@ -4497,11 +4462,7 @@ input::-moz-focus-inner {
 .j-content2 p {
 	max-width: 335px;
 }
-.form-groups + .form-groups {
-	border-top: 2px solid $gray_dark;
-	margin-top: 40px;
-	padding-top: 115px;
-}
+
 .slider ul {
 	list-style-type: none;
 }
