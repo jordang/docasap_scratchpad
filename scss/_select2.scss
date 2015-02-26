@@ -1,19 +1,14 @@
-$color_royal_blue_approx: #3875d7;
-
 .select2-container {
-  //Instead of the line below you could use @includebox-sizing($bs)
   box-sizing: border-box;
   display: inline-block;
   margin: 0;
   position: relative;
   vertical-align: middle;
   .select2-selection--single {
-    //Instead of the line below you could use @includebox-sizing($bs)
     box-sizing: border-box;
     cursor: pointer;
     display: block;
     height: 28px;
-    //Instead of the line below you could use @includeuser-select($select)
     user-select: none;
     .select2-selection__rendered {
       display: block;
@@ -24,12 +19,10 @@ $color_royal_blue_approx: #3875d7;
     }
   }
   .select2-selection--multiple {
-    //Instead of the line below you could use @includebox-sizing($bs)
     box-sizing: border-box;
     cursor: pointer;
     display: block;
     min-height: 32px;
-    //Instead of the line below you could use @includeuser-select($select)
     user-select: none;
     .select2-selection__rendered {
       display: inline-block;
@@ -49,9 +42,7 @@ $color_royal_blue_approx: #3875d7;
 .select2-dropdown {
   background-color: $white;
   border: 1px solid $gray_light;
-  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
   border-radius: 4px;
-  //Instead of the line below you could use @includebox-sizing($bs)
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -69,7 +60,6 @@ $color_royal_blue_approx: #3875d7;
 }
 .select2-results__option {
   padding: 6px;
-  //Instead of the line below you could use @includeuser-select($select)
   user-select: none;
 }
 .select2-results__option[aria-selected] {
@@ -81,16 +71,12 @@ $color_royal_blue_approx: #3875d7;
   }
   .select2-dropdown--above {
     border-bottom: none;
-    //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
     border-bottom-left-radius: 0;
-    //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
     border-bottom-right-radius: 0;
   }
   .select2-dropdown--below {
     border-top: none;
-    //Instead of the line below you could use @includeborder-top-left-radius($radius)
     border-top-left-radius: 0;
-    //Instead of the line below you could use @includeborder-top-right-radius($radius)
     border-top-right-radius: 0;
   }
 }
@@ -100,7 +86,6 @@ $color_royal_blue_approx: #3875d7;
   .select2-search__field {
     padding: 4px;
     width: 100%;
-    //Instead of the line below you could use @includebox-sizing($bs)
     box-sizing: border-box;
   }
   &.select2-search--hide {
@@ -128,7 +113,6 @@ $color_royal_blue_approx: #3875d7;
   .select2-selection--single {
     background-color: $white;
     border: 1px solid $gray_light;
-    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
     border-radius: 4px;
     .select2-selection__rendered {
       color: $gray_dark;
@@ -181,7 +165,6 @@ $color_royal_blue_approx: #3875d7;
   .select2-selection--multiple {
     background-color: $white;
     border: 1px solid $gray_light;
-    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
     border-radius: 4px;
     cursor: text;
     .select2-selection__rendered {
@@ -205,7 +188,6 @@ $color_royal_blue_approx: #3875d7;
     .select2-selection__choice {
       background-color: $gray_lightest;
       border: 1px solid $gray_light;
-      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
       border-radius: 4px;
       cursor: default;
       display: inline;
@@ -312,29 +294,21 @@ $color_royal_blue_approx: #3875d7;
 .select2-container--default.select2-container--open {
   &.select2-container--above {
     .select2-selection--single {
-      //Instead of the line below you could use @includeborder-top-left-radius($radius)
       border-top-left-radius: 0;
-      //Instead of the line below you could use @includeborder-top-right-radius($radius)
       border-top-right-radius: 0;
     }
     .select2-selection--multiple {
-      //Instead of the line below you could use @includeborder-top-left-radius($radius)
       border-top-left-radius: 0;
-      //Instead of the line below you could use @includeborder-top-right-radius($radius)
       border-top-right-radius: 0;
     }
   }
   &.select2-container--below {
     .select2-selection--single {
-      //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
       border-bottom-left-radius: 0;
-      //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
       border-bottom-right-radius: 0;
     }
     .select2-selection--multiple {
-      //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
       border-bottom-left-radius: 0;
-      //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
       border-bottom-right-radius: 0;
     }
   }
@@ -369,9 +343,7 @@ $color_royal_blue_approx: #3875d7;
       background-color: $gray_lightest;
       border: none;
       border-left: 1px solid $gray_light;
-      //Instead of the line below you could use @includeborder-top-right-radius($radius)
       border-top-right-radius: 4px;
-      //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
       border-bottom-right-radius: 4px;
       height: 26px;
       position: absolute;
@@ -417,7 +389,6 @@ $color_royal_blue_approx: #3875d7;
   .select2-selection--multiple {
     background-color: $white;
     border: 1px solid $gray_light;
-    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
     border-radius: 4px;
     cursor: text;
     outline: 0;
@@ -435,7 +406,6 @@ $color_royal_blue_approx: #3875d7;
     .select2-selection__choice {
       background-color: $gray_lightest;
       border: 1px solid $gray_light;
-      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
       border-radius: 4px;
       cursor: default;
       float: left;
@@ -471,7 +441,7 @@ $color_royal_blue_approx: #3875d7;
     color: $gray_half;
   }
   .select2-results__option--highlighted[aria-selected] {
-    background-color: $color_royal_blue_approx;
+    background-color: $dark_color;
     color: $white;
   }
   .select2-results__group {
@@ -499,11 +469,8 @@ $color_royal_blue_approx: #3875d7;
     .select2-selection__arrow {
       border: none;
       border-right: 1px solid $gray_light;
-      //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
       border-radius: 0;
-      //Instead of the line below you could use @includeborder-top-left-radius($radius)
       border-top-left-radius: 4px;
-      //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
       border-bottom-left-radius: 4px;
       left: 1px;
       right: auto;
@@ -525,9 +492,7 @@ $color_royal_blue_approx: #3875d7;
   &.select2-container--above {
     .select2-selection--single {
       border-top: none;
-      //Instead of the line below you could use @includeborder-top-left-radius($radius)
       border-top-left-radius: 0;
-      //Instead of the line below you could use @includeborder-top-right-radius($radius)
       border-top-right-radius: 0;
       background-image: linear-gradient(to bottom, $white 0, $white_gray 50%);
       background-repeat: repeat-x;
@@ -535,18 +500,14 @@ $color_royal_blue_approx: #3875d7;
     }
     .select2-selection--multiple {
       border-top: none;
-      //Instead of the line below you could use @includeborder-top-left-radius($radius)
       border-top-left-radius: 0;
-      //Instead of the line below you could use @includeborder-top-right-radius($radius)
       border-top-right-radius: 0;
     }
   }
   &.select2-container--below {
     .select2-selection--single {
       border-bottom: none;
-      //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
       border-bottom-left-radius: 0;
-      //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
       border-bottom-right-radius: 0;
       background-image: linear-gradient(to bottom, $white_gray 50%, $white 100%);
       background-repeat: repeat-x;
@@ -554,9 +515,7 @@ $color_royal_blue_approx: #3875d7;
     }
     .select2-selection--multiple {
       border-bottom: none;
-      //Instead of the line below you could use @includeborder-bottom-left-radius($radius)
       border-bottom-left-radius: 0;
-      //Instead of the line below you could use @includeborder-bottom-right-radius($radius)
       border-bottom-right-radius: 0;
     }
   }
