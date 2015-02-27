@@ -2498,6 +2498,13 @@ td {
 		}
 	}
 }
+
+.no-appointments-message {
+	display: block;
+	margin: 10em auto;
+	max-width: 600px;
+}
+
 .section-entry {
 	padding: 80px 0 40px;
 	h1 {
@@ -4151,6 +4158,7 @@ input[type="search"] {
 			padding: 0 28px;
 		}
 	}
+
 	.section-help {
 		padding: 77px 0 0 0;
 		.section-head {
