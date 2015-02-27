@@ -959,16 +959,7 @@ td {
 		background-color: $white_gray;
 	}
 }
-.slider-logos {
-	ul {
-		list-style-type: none;
-	}
-	.slide {
-		float: left;
-		width: 506px;
-		text-align: center;
-	}
-}
+
 [class^="list-"] {
 	list-style-type: none;
 }
@@ -1781,22 +1772,23 @@ td {
 .tab-body {
 	overflow: hidden;
 	padding-bottom: 55px;
-	.tab-images {
+	.tab-partner {
 		float: left;
 		width: 310px;
-		text-align: center;
 		padding-top: 70px;
-		img {
+
+		.tab-partner-logo {
 			display: block;
-			max-width: 100%;
+			max-width: 90%;
 			height: auto;
 			margin-bottom: 22px;
 		}
 		p {
 			@extend %strong_font;
+			@extend %antialias;
 			font-size: 24px;
 			line-height: 26px;
-			color: $light_color;
+			color: $gray_lighter;
 			padding-bottom: 22px;
 		}
 	}
@@ -2578,6 +2570,8 @@ td {
 	}
 	.list-logos li {
 		padding-top: 52px;
+
+		.logo { height: 2em; }
 	}
 }
 
@@ -2661,9 +2655,31 @@ td {
 		width: 506px;
 	}
 	.slider-logos {
-		margin-top: -24px;
+		position: absolute;
+		bottom: 25px;
 		width: 506px;
 		text-align: center;
+
+		.slides {
+			list-style-type: none;
+		}
+		.slide {
+			float: left;
+			width: 506px;
+			text-align: center;
+		}
+
+		.slide-image-wrapper {
+			background-color: white;
+			border-radius: 25px;
+			padding: 20px;
+			display: inline-block;
+		}
+
+		.slide-image {
+			height: 50px;
+			width: auto;
+		}
 	}
 	.section-head {
 		padding-bottom: 60px;
@@ -2688,6 +2704,7 @@ td {
 		height: 375px;
 		padding: 21px 20px;
 		margin: auto;
+		position: relative;
 	}
 	.section-title {
 		text-align: center;
@@ -3853,12 +3870,13 @@ input[type="search"] {
 	}
 	.tab-body {
 		padding-bottom: 30px;
-		.tab-images {
+		.tab-partner {
 			float: none;
 			width: auto;
 			padding-top: 0;
 			text-align: center;
-			img {
+
+			.tab-partner-logo {
 				margin: 0 auto;
 			}
 			p {
@@ -4062,16 +4080,7 @@ input[type="search"] {
 				display: block;
 			}
 		}
-		.slider-logos {
-			width: 76px;
-			margin-top: -8px;
-			margin-left: 40px;
-			img {
-				width: 100%;
-				height: auto;
-				display: block;
-			}
-		}
+
 		.section-title {
 			border: 0;
 			margin: 31px 0 0;

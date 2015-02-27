@@ -241,7 +241,7 @@
 						fx: 'crossfade'
 					},
 					items: {
-						height: 'variable'
+						// height: 'variable'
 					}
 				});
 
