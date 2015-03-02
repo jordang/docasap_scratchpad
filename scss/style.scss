@@ -2468,6 +2468,21 @@ td {
 	@extend %user_sections;
 	background-color: $dark_color;
 }
+
+.appointments-main {
+	.main-head, .main-body{
+		max-width: 1000px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 2em;
+		padding-left: 2em;
+	}
+
+	.main-head {
+		margin-bottom: 3em;
+	}
+}
+
 .section-appointment {
 	background-color: $white_gray;
 	margin: 0 10px 100px 67px;
