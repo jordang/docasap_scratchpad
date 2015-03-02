@@ -1,4 +1,4 @@
-@import "compass/css3/user-interface";
+@import "compass/css3/";
 
 @import "fonts";
 @import "colors";
@@ -2483,18 +2483,34 @@ td {
 		background: $sprite_url no-repeat -3px -67px;
 	}
 	.section-head {
-		padding-bottom: 55px;
+		margin-bottom: 3em;
+
+		@include flexbox((
+			display: flex,
+			flex-wrap: wrap,
+			align-items: flex-end,
+			justify-content:  space-between));
 		h3 {
-			float: left;
 			color: $gray_dark;
 			letter-spacing: 3px;
 		}
-		p {
-			float: right;
-			font-size: 24px;
-			line-height: 30px;
-			font-weight: bold;
-			color: $dark_color;
+		.patient_mention {
+			font-size: 1.25em;
+			color: $gray_light;
+		}
+
+		@include respond_to_width(tablet){
+			background-color: $white_gray;
+			padding-left: 100px;
+			margin-bottom: 1em;
+			height: 100px;
+			
+			@include flexbox((
+				flex-wrap: wrap,
+				flex-direction: column,
+				align-items: flex-start,
+				justify-content: center
+			));
 		}
 	}
 }
@@ -4129,31 +4145,7 @@ input[type="search"] {
 			background-size: 555px auto;
 			background-position: 0 -36px;
 		}
-		.section-head {
-			padding-bottom: 0;
-			h3 {
-				height: 101px;
-				width: 100%;
-				background-color: $white_gray;
-				padding: 0 0 0 106px;
-				display: table;
-				font-size: 19px;
-				letter-spacing: 1px;
-				float: none;
-				margin-bottom: 36px;
-				span {
-					display: table-cell;
-					vertical-align: middle;
-				}
-			}
-			p {
-				float: none;
-				padding: 0 28px 28px;
-				font-size: 16px;
-				line-height: 20px;
-				color: $light_color;
-			}
-		}
+
 		.section-body {
 			padding: 0 28px;
 		}
