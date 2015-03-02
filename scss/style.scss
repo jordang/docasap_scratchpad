@@ -980,8 +980,8 @@ td {
 		}
 	}
 	a {
-		font-size: 14px;
-		line-height: 18px;
+		font-size: 1em;;
+		line-height: 1.2;
 		color: $gray_dark;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -2002,7 +2002,6 @@ td {
 	padding-bottom: 100px;
 	.article-content {
 		float: left;
-		width: 320px;
 		overflow: hidden;
 		.btn {
 			background-color: transparent;
@@ -2031,14 +2030,13 @@ td {
 	.article-content-entry {
 		overflow: hidden;
 		padding-top: 7px;
+		font-size: 1em;
 		h2 {
-			font-size: 24px;
+			font-size: 1em;
 			font-weight: bold;
-			line-height: 28px;
-			padding-bottom: 2px;
 		}
 		p {
-			line-height: 20px;
+			font-size: 0.75em; 
 			color: $gray_dark;
 		}
 		a {
@@ -2051,19 +2049,19 @@ td {
 	}
 	.article-aside {
 		float: right;
-		width: 320px;
 		padding-left: 70px;
 		position: relative;
 		padding-top: 7px;
+		font-size: 1em;
+		
 		h2 {
-			font-size: 24px;
+			font-size: 1em;
 			font-weight: bold;
-			line-height: 28px;
 			padding-bottom: 3px;
 		}
 		p {
 			&:last-child {
-				font-size: 12px;
+				font-size: 0.75em;
 				color: $gray_dark;
 				text-transform: uppercase;
 			}
@@ -2075,6 +2073,7 @@ td {
 				}
 			}
 		}
+		a { font-size: 0.75em }
 		.ico-clock {
 			position: absolute;
 			top: 13px;
@@ -2082,7 +2081,7 @@ td {
 		}
 	}
 	.article-caption {
-		font-size: 12px;
+		font-size: 1em;
 		color: $gray_dark;
 		float: left;
 		width: 100%;
@@ -2470,6 +2469,8 @@ td {
 }
 
 .appointments-main {
+	font-size: 14px;
+
 	.main-head, .main-body{
 		max-width: 1000px;
 		margin-right: auto;
@@ -2507,7 +2508,8 @@ td {
 			justify-content:  space-between));
 		h3 {
 			color: $gray_dark;
-			letter-spacing: 3px;
+			letter-spacing: 0.1em;
+			font-size: 2em;
 		}
 		.patient_mention {
 			font-size: 1.25em;
@@ -3593,11 +3595,7 @@ input[type="search"] {
 				margin-top: -2px;
 			}
 		}
-		.article-caption {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-		}
+
 		.article-container {
 			position: relative;
 			padding-bottom: 38px;
