@@ -905,6 +905,41 @@ input[type="submit"] {
 	display: inline-block;
 	background-position: -802px -5px;
 }
+
+.info-page {
+	max-width: 800px;
+	padding-left: 3em;
+	padding-right: 3em;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 14px;
+	line-height: 1.4;
+
+	h2{ margin-top: 2em; }
+
+	ul {
+		padding-left: 3em;
+	}
+
+	li {
+		list-style: none;
+		text-indent: -1.5em;
+
+		&:before {
+			content: "•";
+			color: $light_color;
+			margin-right: 0.6em;
+			font-size: 1.5em;
+		}
+
+		+ li { margin-top: 0.5em; }
+	}
+}
+
+
+
+
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
