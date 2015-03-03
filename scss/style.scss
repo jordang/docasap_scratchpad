@@ -917,23 +917,78 @@ input[type="submit"] {
 
 	h2{ margin-top: 2em; }
 
+	ol, ul { margin-bottom: 3em;}
+
 	ul {
 		padding-left: 3em;
+
+		& > li {
+			list-style: none;
+			text-indent: -1.5em;
+
+			&:before {
+				content: "•";
+				color: $light_color;
+				margin-right: 0.6em;
+				font-size: 1.5em;
+			}
+
+			+ li { margin-top: 0.5em; }
+		}
 	}
 
-	li {
+	ol.ordered_headings {
 		list-style: none;
-		text-indent: -1.5em;
+		counter-reset: section_number;
 
-		&:before {
-			content: "•";
-			color: $light_color;
-			margin-right: 0.6em;
-			font-size: 1.5em;
+		& > li {
+			&:before {
+				counter-increment: section_number;
+				content:counter(section_number) '. ';
+				@extend .section_heading;
+			}
+
+			+ li { margin-top: 3em}
+
+			& > p:first-child {
+				display: inline; 
+			}
 		}
 
-		+ li { margin-top: 0.5em; }
+		.section_heading {
+			font-weight: bold;
+			line-height: inherit;
+			text-transform: uppercase;
+			color: $light_color;
+			display:inline;
+			font-size: inherit;
+			@extend %antialias;
+			margin-right: 0.5em;
+		}
+
+		.section_sub_heading{
+			font-family:inherit;
+			font-size: inherit;
+			display: inline;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-decoration: underline;
+		}
+
+		ol {
+			margin: 0 0 2em 3em;
+
+			li + li { margin-top: 0.5em; }
+		}
 	}
+
+	address {
+		margin-left: 3em;
+
+		.address_line { padding: 0;}
+	}
+
+
 }
 
 
