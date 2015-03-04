@@ -13,7 +13,9 @@
 		}
 	</script>
 	
-	<title>DocASAP Public  Accounts</title>
+	<title><!--#echo var="title"--> | DocASAP — Book Instantly Across The Internet</title>
+	<meta name="description" content="<!--#echo var='description'-->">
+<!-- 	<meta name="keywords" content="online booking, doctors booking, instant booking, online appointment scheduling"> -->
 	
 	<link rel="shortcut icon" type="image/gif" href="images/favicon.gif" />
 	
@@ -34,6 +36,11 @@
 	<script type="text/javascript" src="js/modernizr.custom.39427.js"></script>
 	
 	<script type="text/javascript" src="js/functions.js"></script>
+
+	<!-- These need to be absolute links! -->
+	<meta property="og:image" content="images/see_a_doc_preview.png" />
+	<meta property="og:description" content="<!--#echo var='description'-->" />
+	<meta property="og:site_name" content="DocASAP" />
 </head>
 <body>
 <div class="wrapper">
