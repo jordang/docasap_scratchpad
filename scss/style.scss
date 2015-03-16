@@ -1615,8 +1615,7 @@ td {
 	text-align: center;
 	label {
 		display: inline-block;
-		font-size: 29px;
-		line-height: 32px;
+		font-size: 2rem;
 		color: $gray_light;
 		font-weight: 500;
 	}
@@ -1631,12 +1630,12 @@ td {
 	}
 	.form-body {
 		padding-bottom: 60px;
+		@extend %antialias;
 	}
 	.field {
 		border: 0;
 		border-bottom: 1px solid $gray_light;
-		font-size: 29px;
-		line-height: 32px;
+		font-size: 2rem;
 		color: $light_color!important;
 		font-weight: 500;
 		padding: 0 0 9px 0;
@@ -3208,11 +3207,24 @@ td {
 	}
 }
 .article-options {
-	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: opacity 0.3s;
 }
 .form-add-inline {
-	line-height: 60px;
+	line-height: 1.2;
+	font-size: 1rem;
+
+	%select_inputs{
+		vertical-align: bottom;
+		font-size: 2rem;
+		line-height: 1.1;
+		padding: 0;
+		box-sizing: content-box;
+	}
+
+	.select2-multi {
+		@extend %select_inputs;
+	}
+
 	.field {
 		color: $black;
 		padding: 0;
@@ -3220,7 +3232,6 @@ td {
 		position: relative;
 		z-index: 2;
 		margin: 0 5px;
-		//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 		transition: border-color 300ms;
 		&:focus {
 			border-bottom-color: $light_color;
@@ -3235,17 +3246,76 @@ td {
 	.custom-select.has-selected-value ~ .form-next-step {
 		@extend %extend_7;
 	}
+
+
+
+	.select2-container {
+		vertical-align: bottom;
+		position: relative;
+		top: 4px;
+
+		input {
+			@include input-placeholder {
+				text-align: left;
+			}
+		}
+	}
+
+	.select2-container--default .select2-selection--multiple {
+		border: 0 none;
+		border-bottom: 1px solid $gray_light;
+		line-height: 1;
+		/*min-width: 100px;*/
+		padding: 0 0 1px;
+		z-index: 1;
+
+		.select2-selection__rendered {
+			@extend %select_inputs;
+			color: $black;
+		}
+
+		input {
+			/*min-width: 240px;*/
+			margin-bottom: -8px;
+			padding-right: 0.5em;
+		}
+
+		.select2-selection__choice {
+			padding-bottom: 1px;
+		}
+
+/*		&:after {
+			content: '';
+			position: absolute;
+			top: 23px;
+			right: 8px;
+			border: 0 none;
+			width: 13px;
+			height: 7px;
+			background: $url_dropdown_arrow no-repeat 0 0;
+			margin-top: -4px;
+			pointer-events: none;
+		}
+*/
+		li + li input {
+			min-width: 10px;
+			display: none;
+		}
+	}
+
+	.select2-multi.has-selected-value ~ .form-next-step {
+		@extend %extend_7;
+	}
 }
+
+
 .form-next-step {
 	opacity: 0;
 	visibility: hidden;
-	//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
 	transform: translateY(10px);
-	//Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: 600ms;
 }
 .select2-container {
-	width: auto !important;
 	top: -6px;
 	.select2-selection--single {
 		height: 35px;
@@ -3261,7 +3331,6 @@ td {
 	.select2-selection--single {
 		border-color: transparent;
 		background: transparent;
-		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 		border-radius: 0;
 		border-bottom-color: $gray_light;
 		padding-bottom: 3px;
@@ -3289,7 +3358,7 @@ td {
 	.select2-selection--multiple {
 		@extend .field;
 		border-radius: 0;
-		height: 2.792em; //TODO: Fix to match heights with flexbox instead;
+		/*height: 2.792em; //TODO: Fix to match heights with flexbox instead;*/
 
 		.select2-selection__choice__remove {
 			position: absolute;
@@ -3351,7 +3420,7 @@ input[type="search"] {
 	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 0;
 	border-color: $gray_light;
-	min-width: 25em;
+	/*min-width: 25em;*/
 }
 .select2-results__options {
 	color: $light_color;

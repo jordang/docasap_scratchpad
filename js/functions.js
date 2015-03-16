@@ -52,14 +52,20 @@
 
 		$('.select2-multi')
 			.select2({
-				 theme: 'default alt'
+				 theme: 'default alt',
+				 width: "element"
+			})
+			.filter('[autofocus]').each(function() {
+				$(this).select2('open');
 			})
 			.on('select2:select', function(event) {
 				if(!$(this).data('selected')) {
 					$(this).data('selected', []);
 				};
 
-				$(this).data('selected').push(event.params.data.id);
+				if(event) {
+					$(this).data('selected').push(event.params.data.id);
+				};
 			})
 			.on('select2:unselect', function(event) {
 				var $select = $(this);
@@ -135,7 +141,7 @@
 			});
 
 
-		$('.custom-select').select2().on('change', function() {
+		$('.custom-select').select2().add($('.select2-multi')).on('change', function() {
 			var $select = $(this);
 
 			$select.toggleClass('has-selected-value', this.value !== '');
