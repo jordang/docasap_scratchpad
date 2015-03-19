@@ -24,13 +24,16 @@
 
 				$(".select2-container")
 					.each(function(){
+						
+						//Clear Widths
 						$(this)
 							.css("width","");
 						$("input", this)
 							.css("width","");
 
+						//set new width to auto width (+ 1px)
 						$(this)
-							.css("width",$(this).width() );
+							.css("width",$(this).width() + 1 );
 					});				
 			}
 
