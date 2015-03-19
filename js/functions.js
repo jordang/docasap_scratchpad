@@ -92,6 +92,19 @@
 				 theme: 'default alt',
 				 width: "25px"
 			})
+			.on('change', function() {
+				var $select = $(this);
+
+				$select.toggleClass('has-selected-value', this.value !== '');
+
+				if($select.nextAll('.form-next-step').length) {
+
+					setTimeout(function() {
+						$select.nextAll('.form-next-step').find('input[type="text"]').trigger('focus');
+					}, 50);
+
+				}
+			})
 			.on('select2:select', function(event) {
 				if(!$(this).data('selected')) {
 					$(this).data('selected', []);
