@@ -27,8 +27,6 @@
 
 				hasValue = value.length > 0;
 
-				$field.toggleClass('has-value', hasValue);
-
 				this.style.width = null;
 				
 				if(hasValue) {
@@ -36,6 +34,10 @@
 
 					this.style.width = $fakeElement.width() + 'px';
 				};
+
+				resetContainerWidths();
+
+				$field.toggleClass('has-value', hasValue);
 			});
 
 		});
@@ -54,9 +56,6 @@
 			.select2({
 				 theme: 'default alt',
 				 width: "element"
-			})
-			.filter('[autofocus]').each(function() {
-				$(this).select2('open');
 			})
 			.on('select2:select', function(event) {
 				if(!$(this).data('selected')) {
@@ -110,6 +109,8 @@
 				var $select = $(this);
 
 				$select.next().find('input').trigger('click');
+				resetContainerWidths();
+
 			})
 			.on('select2:append', function() {
 				var selected = $(this).data('selected');
@@ -138,6 +139,9 @@
 				$('.select2-container.select2-container--open .select2-dropdown')
 					.find('.select2-results__option:not(.active)').empty().remove();
 
+			})
+			.filter('[autofocus]').each(function() {
+				$(this).select2('open');
 			});
 
 
@@ -497,6 +501,21 @@
 				})
 			}
 		}
+
+		function resetContainerWidths(){
+			$(".select2-container")
+				.each(function(){
+					$(this)
+						.css("width","");
+					$("input", this)
+						.css("width","");
+
+					$(this)
+						.css("width",$(this).width() );
+				});
+		}
+
+		resetContainerWidths();
 	});
 })(jQuery, window, document);
 

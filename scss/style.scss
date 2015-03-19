@@ -3216,17 +3216,22 @@ td {
 .form-add-inline {
 	line-height: 1.2;
 	font-size: 1rem;
+	-webkit-backface-visibility: hidden;
 
-	%select_inputs{
+	%select_inputs_text {
 		vertical-align: bottom;
 		font-size: 2rem;
 		line-height: 1.1;
-		padding: 0;
 		box-sizing: content-box;
 	}
 
+	%select_inputs_container {
+		padding: 0;
+	}
+
 	.select2-multi {
-		@extend %select_inputs;
+		@extend %select_inputs_text;
+		@extend %select_inputs_container;
 	}
 
 	.field {
@@ -3274,8 +3279,8 @@ td {
 		z-index: 1;
 
 		.select2-selection__rendered {
-			@extend %select_inputs;
-			color: $black;
+			@extend %select_inputs_text;
+			color: $light_color;
 		}
 
 		input {
@@ -3286,6 +3291,8 @@ td {
 
 		.select2-selection__choice {
 			padding-bottom: 1px;
+			white-space: nowrap;
+			width: auto;
 		}
 
 /*		&:after {
@@ -3318,6 +3325,8 @@ td {
 	visibility: hidden;
 	transform: translateY(10px);
 	transition: 600ms;
+	position: relative;
+	-webkit-backface-visibility: hidden;
 }
 .select2-container {
 	top: -6px;
@@ -3406,6 +3415,7 @@ td {
 	}
 	.select2-search--inline .select2-search__field {
 		min-width: 10px;
+		box-sizing: content-box;
 	}
 }
 input[type="search"] {
@@ -3421,10 +3431,11 @@ input[type="search"] {
 	}
 }
 .select2-dropdown {
-	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
 	border-radius: 0;
 	border-color: $gray_light;
-	/*min-width: 25em;*/
+	width: auto !important;
+	white-space: nowrap;
+	overflow: visible;
 }
 .select2-results__options {
 	color: $light_color;
@@ -4695,8 +4706,11 @@ input::-moz-focus-inner {
 }
 .select2-container.select2-container--default.alt .select2-dropdown {
 	border: 1px solid $white_gray;
-	border-top: none;
 	border-bottom: none;
+
+	//To cover the underline of the text field above it
+	border-top: 1px solid $gray_light;
+	margin-top: -1px;
 }
 .skrollr #skrollr-nav-section {
 	position: relative;
