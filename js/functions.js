@@ -5,6 +5,41 @@
 	$doc.ready(function() {
 
 
+		var resetContainerWidths = (function(){
+
+			var minLockTime = 1000, //milliseconds to lock before can be run again 
+				lastRun = 0;
+
+			function updateIfNotTooSoon(){
+				if( lastRun < new Date() - minLockTime ){
+					update();
+					lastRun = new Date();
+					console.log(lastRun);
+				}else{
+					console.log("too soon");
+				}
+			}
+
+			function update(){
+
+				$(".select2-container")
+					.each(function(){
+						$(this)
+							.css("width","");
+						$("input", this)
+							.css("width","");
+
+						$(this)
+							.css("width",$(this).width() );
+					});				
+			}
+
+
+
+			return updateIfNotTooSoon;
+		})()
+
+
 
 		$('.form-add-inline').find('.field').each(function() {
 			var $field = $(this);
@@ -55,7 +90,7 @@
 		$('.select2-multi')
 			.select2({
 				 theme: 'default alt',
-				 width: "element"
+				 width: "25px"
 			})
 			.on('select2:select', function(event) {
 				if(!$(this).data('selected')) {
@@ -141,8 +176,13 @@
 
 			})
 			.filter('[autofocus]').each(function() {
-				resetContainerWidths();
-				$(this).select2('open');
+
+				var field = this;
+
+				setTimeout(function(){
+					resetContainerWidths();
+					$(field).select2('open');
+				}, 1000);
 			});
 
 
@@ -158,9 +198,7 @@
 				}, 50);
 
 			}
-		}).filter('[autofocus]').each(function() {
-			$(this).select2('open');
-		});
+		})
 
 		$('.j-btn').on('click', function (e){
 			$('html, body').animate({
@@ -503,20 +541,11 @@
 			}
 		}
 
-		function resetContainerWidths(){
-			$(".select2-container")
-				.each(function(){
-					$(this)
-						.css("width","");
-					$("input", this)
-						.css("width","");
 
-					$(this)
-						.css("width",$(this).width() );
-				});
-		}
 
 		resetContainerWidths();
+
+
 	});
 })(jQuery, window, document);
 

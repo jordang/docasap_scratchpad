@@ -76,7 +76,7 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 
 //original selectors
 //.form-add-inline .custom-select.has-selected-value ~ .form-next-step, .form-add-inline .field.has-value ~ .form-next-step
-%extend_7 {
+%slide_into_view {
 	opacity: 1;
 	visibility: visible;
 	//Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
@@ -3248,12 +3248,12 @@ td {
 		&.has-value {
 			width: 0;
 			~ .form-next-step {
-				@extend %extend_7;
+				@extend %slide_into_view;
 			}
 		}
 	}
 	.custom-select.has-selected-value ~ .form-next-step {
-		@extend %extend_7;
+		@extend %slide_into_view;
 	}
 
 
@@ -3281,6 +3281,7 @@ td {
 		.select2-selection__rendered {
 			@extend %select_inputs_text;
 			color: $light_color;
+			padding: 0;
 		}
 
 		input {
@@ -3315,7 +3316,7 @@ td {
 	}
 
 	.select2-multi.has-selected-value ~ .form-next-step {
-		@extend %extend_7;
+		@extend %slide_into_view;
 	}
 }
 
@@ -3341,12 +3342,15 @@ td {
 	}
 }
 .select2-container--default {
+/* 	margin-left: 1em; */
+	
 	.select2-selection--single {
 		border-color: transparent;
 		background: transparent;
 		border-radius: 0;
 		border-bottom-color: $gray_light;
 		padding-bottom: 3px;
+		
 		.select2-selection__rendered {
 			color: $light_color;
 			font-size: 29px;
