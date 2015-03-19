@@ -3245,11 +3245,8 @@ td {
 		&:focus {
 			border-bottom-color: $light_color;
 		}
-		&.has-value {
-			width: 0;
-			~ .form-next-step {
-				@extend %slide_into_view;
-			}
+		&.has-value:not(:invalid) ~ .form-next-step {
+			@extend %slide_into_view;
 		}
 	}
 	.custom-select.has-selected-value ~ .form-next-step {
