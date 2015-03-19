@@ -186,19 +186,6 @@
 			});
 
 
-		$('.custom-select').select2().add($('.select2-multi')).on('change', function() {
-			var $select = $(this);
-
-			$select.toggleClass('has-selected-value', this.value !== '');
-
-			if($select.nextAll('.form-next-step').length) {
-
-				setTimeout(function() {
-					$select.nextAll('.form-next-step').find('input[type="text"]').trigger('focus');
-				}, 50);
-
-			}
-		})
 
 		$('.j-btn').on('click', function (e){
 			$('html, body').animate({

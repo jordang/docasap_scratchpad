@@ -75,7 +75,7 @@ $docasap_logo_dark_bg_url: url("../images/docasap_logo_dark_bg.svg");
 
 
 //original selectors
-//.form-add-inline .custom-select.has-selected-value ~ .form-next-step, .form-add-inline .field.has-value ~ .form-next-step
+// .form-add-inline .field.has-value ~ .form-next-step
 %slide_into_view {
 	opacity: 1;
 	visibility: visible;
@@ -3249,9 +3249,7 @@ td {
 			@extend %slide_into_view;
 		}
 	}
-	.custom-select.has-selected-value ~ .form-next-step {
-		@extend %slide_into_view;
-	}
+
 
 
 
