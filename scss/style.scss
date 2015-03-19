@@ -1644,6 +1644,7 @@ td {
 		font-weight: 500;
 		padding: 0 0 9px 0;
 		text-align: left;
+		top: 0.04em;
 	}
 }
 .field-first {
@@ -3214,7 +3215,7 @@ td {
 	transition: opacity 0.3s;
 }
 .form-add-inline {
-	line-height: 1.2;
+	line-height: 2;
 	font-size: 1rem;
 	-webkit-backface-visibility: hidden;
 
@@ -3333,7 +3334,7 @@ td {
 		}
 	}
 	&.alt {
-		top: 0;
+		top: -0.85em;
 	}
 }
 .select2-container--default {
