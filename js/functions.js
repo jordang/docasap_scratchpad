@@ -141,6 +141,7 @@
 
 			})
 			.filter('[autofocus]').each(function() {
+				resetContainerWidths();
 				$(this).select2('open');
 			});
 
