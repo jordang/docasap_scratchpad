@@ -2784,10 +2784,11 @@ td {
 	}
 }
 .section-add {
-	padding: 112px 0;
 	width: 100%;
-	margin: auto;
+	margin: 8em auto auto;
 	max-width: 50em;
+
+	@include respond_to_width(mobile){ margin-top: 1em; }
 }
 .section-works {
 	padding: 100px 3em 84px;
@@ -3917,10 +3918,6 @@ input[type="search"] {
 			padding-bottom: 15px;
 		}
 		.form-btn {
-			font-size: 15px;
-			line-height: 17px;
-			width: 210px;
-			height: 45px;
 			margin-bottom: 50px;
 		}
 	}
