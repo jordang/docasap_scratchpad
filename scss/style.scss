@@ -116,7 +116,13 @@ nav {
 html {
 	height: 100%;
 	overflow-y: scroll;
+	font-size: 16px;
+
+	@include respond_to_width(handheld){
+		font-size: 12px;
+	}
 }
+
 body {
 	@extend %regular_font;
 	height: 100%;
@@ -1622,6 +1628,7 @@ td {
 		font-size: 2rem;
 		color: $gray_light;
 		font-weight: 500;
+		vertical-align: baseline;
 	}
 	.form-head {
 		padding-bottom: 70px;
@@ -3222,7 +3229,7 @@ td {
 	%select_inputs_text {
 		vertical-align: bottom;
 		font-size: 2rem;
-		line-height: 1.1;
+/* 		line-height: 1.1; */
 		box-sizing: content-box;
 	}
 
@@ -3238,7 +3245,7 @@ td {
 	.field {
 		color: $black;
 		padding: 0;
-		background: $white;
+/* 		background: $white; */
 		position: relative;
 		z-index: 2;
 		margin: 0 5px;
@@ -3255,9 +3262,10 @@ td {
 
 
 	.select2-container {
-		vertical-align: bottom;
+		vertical-align: baseline;
 		position: relative;
 		top: 4px;
+		max-width: 95vw;
 
 		input {
 			@include input-placeholder {
@@ -3269,7 +3277,7 @@ td {
 	.select2-container--default .select2-selection--multiple {
 		border: 0 none;
 		border-bottom: 1px solid $gray_light;
-		line-height: 1;
+/* 		line-height: 1; */
 		/*min-width: 100px;*/
 		padding: 0 0 1px;
 		z-index: 1;
@@ -3334,7 +3342,7 @@ td {
 		}
 	}
 	&.alt {
-		top: -0.85em;
+		top: 0;
 	}
 }
 .select2-container--default {
@@ -3402,6 +3410,14 @@ td {
 	&.alt {
 		.select2-results__option {
 			border-bottom: 1px solid $white_gray;
+			white-space: nowrap;
+
+			@include respond_to_width(handheld){
+				white-space:normal;
+				width: 95vw;
+				max-width: 100%;
+			}
+
 			.select2-results__option {
 				padding-left: 6px;
 			}
@@ -3436,6 +3452,7 @@ input[type="search"] {
 	width: auto !important;
 	white-space: nowrap;
 	overflow: visible;
+	max-width: 90vw;
 }
 .select2-results__options {
 	color: $light_color;
@@ -3895,16 +3912,7 @@ input[type="search"] {
 	}
 
 	.form-add {
-		label {
-			font-size: 18px;
-			line-height: 22px;
-			padding-bottom: 7px;
-		}
-		.field {
-			font-size: 18px;
-			line-height: 22px;
-			padding-bottom: 5px;
-		}
+
 		.form-row {
 			padding-bottom: 15px;
 		}
