@@ -2417,31 +2417,29 @@ td {
 	}
 }
 .article-help {
-	p {
-		font-size: 18px;
-		line-height: 24px;
-		color: $gray_half;
-	}
+	@include display-flex;
+	@include align-items(center);
+	@include justify-content(center);
+	@include flex-wrap(wrap);
+
 	.help-blurb {
 		display: inline-block;
+		color: $gray_half;
 		width: 350px;
-		padding-top: 15px;
-		margin-left: 10%;
+		font-size: 1.1em;
+		line-height: 1.4;
+		margin-right: 1em;
 
 		@include respond_to_width(tablet){
-			display: block;
 			margin:auto;
 			width: 90%;
 		}
 	}
 	.article-images {
 		width: 50%;
-		max-width: 510px;
 		display: inline-block;
-		vertical-align: top;
 
 		@include respond_to_width(tablet){
-			float: none;
 			display: block;
 			margin: 2em auto 0;
 			width: 75%;
@@ -2449,7 +2447,7 @@ td {
 	}
 	.article-actions {
 		width: 100%;
-		margin: 5em auto auto;
+		margin-top: 5em;
 		text-align: center;
 
 
@@ -2699,7 +2697,8 @@ td {
 	}
 }
 .section-partners {
-	padding-bottom: 120px;
+	max-width: 900px;
+	margin: 0 auto 8em;
 }
 .section-partners-secondary {
 	h1 {
@@ -2778,9 +2777,10 @@ td {
 	}
 }
 .section-help {
-	padding: 127px 0 100px;
+	margin: 8em auto 7em;
+	max-width: 900px;
 	.section-head {
-		padding-bottom: 50px;
+		margin-bottom: 2em;
 	}
 }
 .section-add {
@@ -3689,31 +3689,7 @@ input[type="search"] {
 			line-height: 14px;
 		}
 	}
-	.article-help {
-		overflow: hidden;
-		p {
-			font-size: 14px;
-			line-height: 18px;
-		}
 
-		.article-actions {
-			padding: 36px 0 54px;
-			text-align: center;
-			h3 {
-				text-align: center;
-				font-size: 14px;
-				line-height: 18px;
-				font-weight: bold;
-				padding: 0 0 7px 0;
-				float: none;
-			}
-			p {
-				padding-bottom: 20px;
-				float: none;
-				padding-right: 0;
-			}
-		}
-	}
 	.section-landing {
 		padding-top: 93px;
 		min-height: 444px;
@@ -4340,13 +4316,6 @@ input[type="search"] {
 
 		.section-body {
 			padding: 0 28px;
-		}
-	}
-
-	.section-help {
-		padding: 77px 0 0 0;
-		.section-head {
-			padding-bottom: 0;
 		}
 	}
 
