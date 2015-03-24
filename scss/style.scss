@@ -1492,6 +1492,23 @@ td {
 	.form-btn {
 		width: 100%;
 		margin: 0 auto 0.75em;
+
+		&:before{ content:"SIGN IN"	}
+
+		&:disabled{
+			@extend %red_ghost_button;
+			@extend %regular_font;
+
+			font-size: 12px;
+			display: block;
+			text-transform: none;
+			font-weight: normal;
+			text-align: left;
+
+			&:before{
+				content:"Oops.  It appears you typed in the wrong username or password.  You only get three tries before your account gets locked."
+			}
+		}
 	}
 }
 .form-change {
@@ -2025,7 +2042,10 @@ td {
 
 	$col_space: 8%;
 	.menu-aside { padding-right: $col_space; }
-	.menu-content { padding-left: $col_space; }
+	.menu-content {
+		padding-left: $col_space;
+		max-width: 20em;
+		}
 
 	.nav-secondary {
 		margin-top: 3em;

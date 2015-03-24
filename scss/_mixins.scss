@@ -76,3 +76,5 @@
 
 %gray_ghost_button{ @include build_button($gray_light, true) }
 %green_filled_button{ @include build_button($green, false) }
+
+%red_ghost_button{ @include build_button($red, true) }
