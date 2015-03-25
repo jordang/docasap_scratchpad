@@ -744,11 +744,14 @@ input[type="submit"] {
 	display: inline-block;
 	background-position: -211px -48px;
 }
-.ico-clock {
-	width: 55px;
-	height: 47px;
+.clock {
 	display: inline-block;
-	background-position: -143px -67px;
+	color: $dark_color;
+				
+	&:before{
+		@extend .fa;
+		@extend .fa-clock-o;
+	}
 }
 .ico-check-secondary {
 	width: 18px;
@@ -2142,7 +2145,7 @@ td {
 		padding-bottom: 30px;
 	}
 	.article-avatar {
-		float: left;
+		position: absolute;
 		border-radius: 100%;
 		margin-right: 1.5em;
 		$size: 7em;
@@ -2154,59 +2157,117 @@ td {
 			position: center;
 			size: cover;
 		}
+
+		.section-appointment-secondary & {
+			$size: 4em;
+			width: $size;
+			height: $size;
+		}
+
+		@include respond_to_width(handheld){
+			$size: 3em;
+			width: $size;
+			height: $size;
+		}
 	}
-	.article-content-entry {
-		overflow: hidden;
-		padding-top: 7px;
+
+	%article-common-stuff {
 		font-size: 1em;
+		max-width: 15em;
+		margin-right: 1em;
+
 		h2 {
 			font-size: 1em;
 			font-weight: bold;
 		}
+		.appt-date, .appt-time {
+			@extend h2;
+		}
+
 		p {
 			font-size: 0.75em; 
 			color: $gray_dark;
 		}
+		.location-address{
+			font-style: normal;	
+		}
+
 		a {
 			font-weight: bold;
 			color: $dark_color;
+			font-size: 0.75em;
+			
 			&:hover {
 				color: $black;
 			}
 		}
-	}
-	.article-aside {
-		float: right;
-		padding-left: 70px;
-		position: relative;
-		padding-top: 7px;
-		font-size: 1em;
-		
-		h2 {
-			font-size: 1em;
-			font-weight: bold;
-			padding-bottom: 3px;
-		}
-		p {
-			&:last-child {
+
+		.buttons {
+			%button_styles {
+				color: $black;
+				background: none;
+				border: none;
 				font-size: 0.75em;
-				color: $gray_dark;
-				text-transform: uppercase;
-			}
-			a {
-				font-weight: bold;
-				color: $dark_color;
-				&:hover {
-					color: $black;
+
+				&:before{
+					@extend .fa;
+					color: $dark_color;
 				}
 			}
+
+			.cancel-appt{
+				@extend %button_styles;
+				&:before { @extend .fa-times; }
+			}
+
+			.reschedule-appt{
+				@extend %button_styles;
+				margin-left: 1em;
+				&:before { @extend .fa-arrows-h; }
+			}
 		}
-		a { font-size: 0.75em }
-		.ico-clock {
+
+		@include respond_to_width(tablet){
+			margin-left: 8em !important;
+			margin-bottom: 1em;
+			float:none !important;
+			clear: both;
+			
+			.clock { display: none; }
+			.section-appointment-secondary & { margin-left: 5em !important;}	
+		}
+
+		@include respond_to_width(handheld){
+			margin-left: 4em !important;
+		}
+
+	}
+
+
+	.article-location-info {
+		@extend %article-common-stuff;
+		margin-left: 8em;
+
+		.section-appointment-secondary & { margin-left: 5em; }
+	}
+
+	.article-aside {
+		@extend %article-common-stuff;
+
+		float: right;
+		position: relative;
+		margin-left: 3em;
+
+		.clock {
 			position: absolute;
-			top: 13px;
-			left: 0;
+			left: -1em;
+			font-size: 3em;
 		}
+
+		.section-appointment-secondary & {
+			.clock { font-size: 2em; }
+		}
+
 	}
 	.article-caption {
 		font-size: 1em;
@@ -2243,42 +2304,26 @@ td {
 		}
 	}
 	.article-review {
-		width: 180px;
-		float: left;
-		padding-top: 7px;
-		h2 {
-			font-size: 24px;
-			font-weight: bold;
-			line-height: 28px;
-			padding-bottom: 3px;
-		}
+		@extend %article-common-stuff;
+		width: 13.5em;
+		float: right;
 	}
 	.article-appointment {
-		width: 215px;
-		float: left;
-		padding-top: 7px;
+		@extend %article-common-stuff;
+		width: 13.5em;
+		float: right;
 		position: relative;
-		h2 {
-			font-size: 24px;
-			font-weight: bold;
-			line-height: 28px;
+
+		margin-top: 1.5em;
+
+		@include respond_to_width(tablet){
+			margin-top: 1em;
 		}
-		p {
-			font-size: 12px;
-			line-height: 20px;
-			color: $gray_dark;
-			position: relative;
-			padding-right: 25px;
-		}
-		a {
-			text-transform: uppercase;
-			font-weight: bold;
-			font-size: 14px;
-		}
+
 		.btn-settings {
 			position: absolute;
-			top: 4px;
-			right: 10px;
+			top: 0;
+			right: -16px;
 		}
 	}
 	.article-options {
@@ -2335,6 +2380,10 @@ td {
 			left: 0;
 			z-index: 98;
 		}
+	}
+
+	.pat-name {
+		margin-top: 1.5em;
 	}
 }
 .art-overlay {
@@ -2595,7 +2644,7 @@ td {
 }
 
 .appointments-main {
-	font-size: 14px;
+	font-size: 16px;
 
 	.main-head, .main-body{
 		max-width: 1000px;
@@ -2615,6 +2664,7 @@ td {
 	margin: 0 10px 100px 67px;
 	padding: 75px 105px 60px;
 	position: relative;
+
 	&:after {
 		width: 135px;
 		height: 135px;
@@ -2624,6 +2674,7 @@ td {
 		content: '';
 		background: $sprite_url no-repeat -3px -67px;
 	}
+
 	.section-head {
 		margin-bottom: 3em;
 
@@ -2646,7 +2697,7 @@ td {
 			background-color: $white_gray;
 			padding-left: 100px;
 			margin-bottom: 1em;
-			height: 100px;
+			min-height: 100px;
 			
 			@include flexbox((
 				flex-wrap: wrap,
@@ -2815,7 +2866,7 @@ td {
 	margin: 8em auto auto;
 	max-width: 50em;
 
-	@include respond_to_width(mobile){ margin-top: 1em; }
+	@include respond_to_width(handheld){ margin-top: 1em; }
 }
 .section-works {
 	padding: 100px 3em 84px;
@@ -3766,7 +3817,7 @@ input[type="search"] {
 		}
 	}
 	.article {
-		.article-content-entry {
+		.article-location-info {
 			padding-top: 0;
 			h2 {
 				font-size: 16px;
@@ -3783,31 +3834,8 @@ input[type="search"] {
 			padding-bottom: 38px;
 			margin-bottom: 40px;
 		}
-		.article-content {
-			width: auto;
-			float: none;
-			padding-bottom: 13px;
-		}
-		.article-aside {
-			width: auto;
-			float: none;
-			padding: 0 0 0 48px;
-			h2 {
-				font-size: 16px;
-				line-height: 20px;
-				padding: 8px 50px 0 0;
-			}
-			.ico-clock {
-				width: 24px;
-				height: 20px;
-				background-size: 400px;
-				background-position: -56px -26px;
-				left: 6px;
-			}
-			.list-links {
-				padding-top: 18px;
-			}
-		}
+
+
 		.article-actions {
 			padding-bottom: 40px;
 			p {
@@ -3832,39 +3860,13 @@ input[type="search"] {
 				}
 			}
 		}
-		.article-review {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			float: none;
-			width: auto;
-			h2 {
-				float: left;
-				font-size: 16px;
-				line-height: 20px;
-				margin-right: 10px;
-				margin-top: 2px;
-			}
-			.review {
-				float: left;
-			}
-		}
+
 		.article-appointment {
-			padding: 0 0 52px 48px;
 			float: none;
 			width: auto;
 			position: relative;
-			&:after {
-				background-image: $sprite_url;
-				width: 30px;
-				height: 26px;
-				background-size: 500px;
-				background-position: -71px -32px;
-				content: '';
-				position: absolute;
-				top: 4px;
-				left: 3px;
-			}
+			clear: both;
+
 			h2 {
 				font-size: 16px;
 				line-height: 20px;
@@ -4492,15 +4494,12 @@ input[type="search"] {
 	.form-add-inline {
 		line-height: 30px;
 	}
-	.pat-name {
-		position: relative;
-		top: -35px;
-		font-weight: bold;
-	}
+
 	.actions-pat {
 		position: absolute;
-		bottom: -2px;
-		left: 50px;
+		bottom: -2em;
+		display: block;
+
 		a {
 			font-size: 12px;
 			color: $light_color!important;
@@ -4659,10 +4658,7 @@ input::-moz-focus-inner {
 }
 .section-appointment-secondary .article {
 	padding-bottom: 0;
-	.article-content-entry {
-		p {
-			font-size: 12px;
-		}
+	.article-location-info {
 		.actions {
 			padding-top: 10px;
 			text-transform: uppercase;
